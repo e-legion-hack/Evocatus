@@ -11,24 +11,26 @@ class MeetsTableViewCell: UITableViewCell {
     
     static let identifier = "MeetsTableViewCellReuseIndentifier"
     
-    @IBOutlet var placeNameLabelOutlet: UILabel!
-    @IBOutlet var logoImage: UIImageView!
+    @IBOutlet weak var typeOfMeetLogoOutlet: UIImageView!
+    @IBOutlet weak var employeeNameLabelOutlet: UILabel!
     
+    @IBOutlet weak var backGroundCellViewOutlet: UIView!
     override func layoutSubviews() {
         super.layoutSubviews()
         self.configureCellStaticApperance()
         
     }
     
-    func configure(placeName: String?, placeLogo: String) {
+    func configure(placeName: String, placeLogo: String) {
         //imageChannelsCell.image = UIImage(named: imageName ?? "logo-default")
-        placeNameLabelOutlet.text = placeName
-        logoImage.image = UIImage(named: placeLogo)
+        employeeNameLabelOutlet.text = placeName
+        typeOfMeetLogoOutlet.image = UIImage(named: placeLogo)
     }
     
     func configureCellStaticApperance() {
         self.backgroundColor = .clear
         selectedBackgroundView?.backgroundColor = .gray
-        logoImage.layer.cornerRadius = 4
+        typeOfMeetLogoOutlet.layer.cornerRadius = 4
+        backGroundCellViewOutlet.layer.cornerRadius = 30
     }
 }

@@ -9,9 +9,10 @@ import UIKit
 //import Alamofire
 //import SwiftyJSON
 
-class PlacesViewController: UIViewController {
-
-    @IBOutlet var tableView: UITableView!
+class MeetViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var array  = [String]()
     let url = "https://jsonplaceholder.typicode.com/comments"
     
@@ -20,8 +21,8 @@ class PlacesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
-        tableView.register(UINib(nibName: "PlacesTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "PlacesTableViewCellReuseIndentifier")
+        tableView.register(UINib(nibName: "MeetsTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MeetsTableViewCellReuseIndentifier")
         
         //getZapros(url: url)
         
@@ -37,6 +38,7 @@ class PlacesViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        self.tableView.separatorColor = .clear
         tableView.reloadData()
     }
     
@@ -76,15 +78,15 @@ class PlacesViewController: UIViewController {
 
 
 
-extension PlacesViewController: UITableViewDelegate, UITableViewDataSource {
+extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //Storage.allPlaces.count
-        array.count
+        Storage.allMeets.count
+        //array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: MeetsTableViewCell.identifier, for: indexPath) as! MeetsTableViewCell
-        cell.configure(placeName: array[indexPath.row], placeLogo: array[indexPath.row])
+        cell.configure(placeName: Storage.allMeets[indexPath.row].name, placeLogo: Storage.allMeets[indexPath.row].logo)
         return cell
     }
 }
