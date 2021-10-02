@@ -62,7 +62,7 @@ class NotificationViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        indexPath.section == 2 ? 250 : 44
+        indexPath.section == 2 ? 325 : 44
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
