@@ -16,6 +16,8 @@ class MeetViewController: UIViewController {
     var array  = [String]()
     let url = "https://jsonplaceholder.typicode.com/comments"
     
+    let data = [["0,0", "0,1", "0,2"], ["1,0", "1,1", "1,2"]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -80,14 +82,17 @@ class MeetViewController: UIViewController {
 
 extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        data.count
     }
     
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "Мои заявки"
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        Storage.allMeets.count
-        //array.count
+//        Storage.allMeets.count
+        data[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
