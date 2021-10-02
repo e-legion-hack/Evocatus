@@ -11,7 +11,7 @@
 		11320D70270813CC00BDB3FD /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11320D6F270813CC00BDB3FD /* EventModel.swift */; };
 		11341ABC2708236C00ABB58F /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ABB2708236C00ABB58F /* GradientButton.swift */; };
 		11341AC027082FF900ABB58F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ABF27082FF900ABB58F /* TabBarController.swift */; };
-		E00533CF27086AA50023F98E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00533CE27086AA50023F98E /* ProfileViewController.swift */; };
+
 		E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C22707C3EB0028BAEB /* AppDelegate.swift */; };
 		E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */; };
 		E007A8C72707C3EB0028BAEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C62707C3EB0028BAEB /* LoginViewController.swift */; };
@@ -30,7 +30,7 @@
 		11320D6F270813CC00BDB3FD /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		11341ABB2708236C00ABB58F /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		11341ABF27082FF900ABB58F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		E00533CE27086AA50023F98E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+
 		E007A8BF2707C3EB0028BAEB /* Evocatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evocatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E007A8C22707C3EB0028BAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +104,9 @@
 		11341AC22708304B00ABB58F /* Meets */ = {
 			isa = PBXGroup;
 			children = (
+				11341AC527085F9300ABB58F /* MeetsViewController.swift */,
+				11341AC92708612300ABB58F /* MeetsTableViewCell.swift */,
+				11341AC727085FFA00ABB58F /* MeetsTableViewCell.xib */,
 			);
 			path = Meets;
 			sourceTree = "<group>";
@@ -120,6 +123,15 @@
 			children = (
 			);
 			path = Tasks;
+			sourceTree = "<group>";
+		};
+		11341ACD270868F600ABB58F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				11341ACB270868E500ABB58F /* Storage.swift */,
+				11341ACE2708693B00ABB58F /* MeetStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		E007A8B62707C3EB0028BAEB = {
@@ -141,6 +153,7 @@
 		E007A8C12707C3EB0028BAEB /* Evocatus */ = {
 			isa = PBXGroup;
 			children = (
+				11341ACD270868F600ABB58F /* Storage */,
 				11341ABD27082FD200ABB58F /* Controllers */,
 				11341ABA2708234D00ABB58F /* Custom */,
 				11320D6C2708135B00BDB3FD /* Models */,
@@ -242,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11341AC827085FFA00ABB58F /* MeetsTableViewCell.xib in Resources */,
 				E007A8CF2707C3EC0028BAEB /* LaunchScreen.storyboard in Resources */,
 				E007A8CC2707C3EC0028BAEB /* Assets.xcassets in Resources */,
 				E007A8CA2707C3EB0028BAEB /* Main.storyboard in Resources */,
@@ -259,15 +273,18 @@
 				E012C6D0270856DF00705445 /* HeaderTableViewCell.swift in Sources */,
 				E012C6DB2708582E00705445 /* NotificationViewController.swift in Sources */,
 				E007A8C72707C3EB0028BAEB /* LoginViewController.swift in Sources */,
+				11341ACA2708612300ABB58F /* MeetsTableViewCell.swift in Sources */,
+				11341AC627085F9300ABB58F /* MeetsViewController.swift in Sources */,
 				11341ABC2708236C00ABB58F /* GradientButton.swift in Sources */,
 				E012C6D9270857B600705445 /* OptionsTableViewCell.swift in Sources */,
 				11320D6E2708138A00BDB3FD /* EmployeeModel.swift in Sources */,
 				E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */,
 				11341AC027082FF900ABB58F /* TabBarController.swift in Sources */,
 				11320D70270813CC00BDB3FD /* EventModel.swift in Sources */,
-				E00533CF27086AA50023F98E /* ProfileViewController.swift in Sources */,
+
 				E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */,
 				E012C6D52708573800705445 /* UIFont.swift in Sources */,
+				11341ACC270868E500ABB58F /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
