@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         passwordField.layer.borderColor = UIColor.gray.cgColor
         passwordField.clipsToBounds = true
         
-        loginButtonOutlet.layer.cornerRadius = 20
+        loginButtonOutlet.layer.cornerRadius = 44
         
         
         NotificationCenter.default.addObserver(
