@@ -63,15 +63,21 @@ class LoginViewController: UIViewController {
         super.viewWillLayoutSubviews()
         loginField.layer.cornerRadius = 10
         loginField.layer.borderWidth = 0.5
-        loginField.layer.borderColor = UIColor(named: "main")?.cgColor
+        loginField.layer.borderColor = UIColor(named: "2")?.cgColor
         loginField.clipsToBounds = true
         
         passwordField.layer.cornerRadius = 10
         passwordField.layer.borderWidth = 0.5
-        passwordField.layer.borderColor = UIColor(named: "main")?.cgColor
+        passwordField.layer.borderColor = UIColor(named: "2")?.cgColor
+        
         passwordField.clipsToBounds = true
         
         loginButtonOutlet.layer.cornerRadius = 18
+        loginButtonOutlet.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        loginButtonOutlet.layer.shadowOffset = CGSize(width: 0, height: 3)
+        loginButtonOutlet.layer.shadowOpacity = 1.0
+        loginButtonOutlet.layer.shadowRadius = 10.0
+        loginButtonOutlet.layer.masksToBounds = false
     }
     
     @objc func keyboardWasShown(notification: Notification) {
