@@ -181,8 +181,30 @@
                     <view key="view" contentMode="scaleToFill" id="k34-3f-dsL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BFQ-VL-Iw2">
+                                <rect key="frame" x="0.0" y="236" width="414" height="577"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQH-R9-yjD">
+                                <rect key="frame" x="0.0" y="108" width="414" height="128"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="NIV-97-3A3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KbO-B4-4hT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VQH-R9-yjD" firstAttribute="leading" secondItem="KbO-B4-4hT" secondAttribute="leading" id="EmS-RV-U3d"/>
+                            <constraint firstItem="KbO-B4-4hT" firstAttribute="trailing" secondItem="BFQ-VL-Iw2" secondAttribute="trailing" id="G82-DA-aRL"/>
+                            <constraint firstItem="KbO-B4-4hT" firstAttribute="bottom" secondItem="BFQ-VL-Iw2" secondAttribute="bottom" id="PPv-Dd-Xnr"/>
+                            <constraint firstItem="KbO-B4-4hT" firstAttribute="trailing" secondItem="VQH-R9-yjD" secondAttribute="trailing" id="Qbm-8s-Wnc"/>
+                            <constraint firstItem="VQH-R9-yjD" firstAttribute="top" secondItem="KbO-B4-4hT" secondAttribute="top" id="bM6-Kx-KDm"/>
+                            <constraint firstItem="BFQ-VL-Iw2" firstAttribute="top" secondItem="VQH-R9-yjD" secondAttribute="bottom" id="eAo-tV-ntv"/>
+                            <constraint firstItem="BFQ-VL-Iw2" firstAttribute="leading" secondItem="KbO-B4-4hT" secondAttribute="leading" id="oWX-8Y-tFV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Встречи" id="z3m-Mx-PWx"/>
                 </viewController>
@@ -274,6 +296,9 @@
         <image name="tasks" width="43" height="43"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
