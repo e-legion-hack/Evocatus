@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,6 +65,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1zq-5s-ufU" secondAttribute="trailing" id="53w-Nd-Yah"/>
                                     <constraint firstItem="e66-jQ-5dE" firstAttribute="top" secondItem="QPu-vN-QZG" secondAttribute="bottom" constant="19" id="7s7-yu-bCu"/>
@@ -113,7 +115,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zpP-M6-mWN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
                     </view>
                     <navigationItem key="navigationItem" title="Коллеги" id="dj4-2i-7jv"/>
                 </viewController>
@@ -129,9 +131,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="73e-po-YNv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Профиль" id="6cN-Xh-kso"/>
+                    <navigationItem key="navigationItem" title="Профиль" id="6cN-Xh-kso">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bell" catalog="system" width="5" id="3Es-QJ-R7h">
+                            <connections>
+                                <segue destination="6qN-XY-1CQ" kind="show" id="ZsU-aH-iTy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luS-a2-tYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,7 +174,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eli-Ff-4SP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
                     </view>
                     <navigationItem key="navigationItem" title="Задачи" id="DqE-Sn-YA7"/>
                 </viewController>
@@ -177,18 +185,62 @@
         <!--Встречи-->
         <scene sceneID="335-s7-rPY">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Kin-rL-26V" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Kin-rL-26V" customClass="MeetViewController" customModule="Evocatus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k34-3f-dsL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BFQ-VL-Iw2">
+                                <rect key="frame" x="0.0" y="108" width="414" height="705"/>
+                                <color key="backgroundColor" name="background"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KbO-B4-4hT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="KbO-B4-4hT" firstAttribute="trailing" secondItem="BFQ-VL-Iw2" secondAttribute="trailing" id="G82-DA-aRL"/>
+                            <constraint firstItem="KbO-B4-4hT" firstAttribute="bottom" secondItem="BFQ-VL-Iw2" secondAttribute="bottom" id="PPv-Dd-Xnr"/>
+                            <constraint firstItem="BFQ-VL-Iw2" firstAttribute="leading" secondItem="KbO-B4-4hT" secondAttribute="leading" id="oWX-8Y-tFV"/>
+                            <constraint firstItem="BFQ-VL-Iw2" firstAttribute="top" secondItem="KbO-B4-4hT" secondAttribute="top" id="sUO-xo-QRv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Встречи" id="z3m-Mx-PWx"/>
+                    <connections>
+                        <outlet property="tableView" destination="BFQ-VL-Iw2" id="7qu-tS-iI9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgg-Oa-VK1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3013.04347826087" y="96.428571428571431"/>
+        </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="5gH-We-sq1">
+            <objects>
+                <tableViewController modalPresentationStyle="fullScreen" id="6qN-XY-1CQ" customClass="NotificationViewController" customModule="Evocatus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2G5-nU-Btd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="b1W-8d-8jr">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b1W-8d-8jr" id="Tr6-zn-U02">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6qN-XY-1CQ" id="Ksr-6S-YND"/>
+                            <outlet property="delegate" destination="6qN-XY-1CQ" id="ukM-4p-uF7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="M9C-um-1cq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kzm-zM-nSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3013" y="-1329"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gXv-yu-IRw">
@@ -268,10 +320,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="home" width="44" height="44"/>
         <image name="logo-new" width="259" height="264"/>
         <image name="meet" width="41" height="41"/>
         <image name="tasks" width="43" height="43"/>
+        <namedColor name="background">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
