@@ -40,6 +40,10 @@ class OptionsTableViewCell: UITableViewCell {
     
     func cellConfigure(nameArray: [[String]], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
+        
+        if indexPath == [2, 0] {
+            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        }
     }
     
     //MARK: - SetOptionsConstraints

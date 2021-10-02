@@ -14,7 +14,7 @@ class NotificationViewController: UITableViewController {
     let cellNameArray = [
         ["Через 6 дней запланированный отпук", "Вечером в офисе др у Jhon Doe"],
         ["Завтра вечерний футбол на коробке"],
-        ["Тут будет календарь"]
+        [""]
     ]
     
     private let idOptionsCell = "idOptionsCell"
