@@ -10,6 +10,7 @@
 		11320D6E2708138A00BDB3FD /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11320D6D2708138A00BDB3FD /* EmployeeModel.swift */; };
 		11320D70270813CC00BDB3FD /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11320D6F270813CC00BDB3FD /* EventModel.swift */; };
 		11341ABC2708236C00ABB58F /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ABB2708236C00ABB58F /* GradientButton.swift */; };
+		11341AC027082FF900ABB58F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ABF27082FF900ABB58F /* TabBarController.swift */; };
 		E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C22707C3EB0028BAEB /* AppDelegate.swift */; };
 		E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */; };
 		E007A8C72707C3EB0028BAEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C62707C3EB0028BAEB /* LoginViewController.swift */; };
@@ -22,6 +23,7 @@
 		11320D6D2708138A00BDB3FD /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		11320D6F270813CC00BDB3FD /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		11341ABB2708236C00ABB58F /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		11341ABF27082FF900ABB58F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E007A8BF2707C3EB0028BAEB /* Evocatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evocatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E007A8C22707C3EB0028BAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,54 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		11341ABD27082FD200ABB58F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11341AC42708308D00ABB58F /* Tasks */,
+				11341AC32708306900ABB58F /* Profile */,
+				11341AC22708304B00ABB58F /* Meets */,
+				11341AC12708304200ABB58F /* Employees */,
+				11341ABE27082FE000ABB58F /* TabBar */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11341ABE27082FE000ABB58F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				11341ABF27082FF900ABB58F /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		11341AC12708304200ABB58F /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
+		11341AC22708304B00ABB58F /* Meets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Meets;
+			sourceTree = "<group>";
+		};
+		11341AC32708306900ABB58F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		11341AC42708308D00ABB58F /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
 		E007A8B62707C3EB0028BAEB = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +129,7 @@
 		E007A8C12707C3EB0028BAEB /* Evocatus */ = {
 			isa = PBXGroup;
 			children = (
+				11341ABD27082FD200ABB58F /* Controllers */,
 				11341ABA2708234D00ABB58F /* Custom */,
 				11320D6C2708135B00BDB3FD /* Models */,
 				E007A8C22707C3EB0028BAEB /* AppDelegate.swift */,
@@ -166,6 +217,7 @@
 				11341ABC2708236C00ABB58F /* GradientButton.swift in Sources */,
 				11320D6E2708138A00BDB3FD /* EmployeeModel.swift in Sources */,
 				E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */,
+				11341AC027082FF900ABB58F /* TabBarController.swift in Sources */,
 				11320D70270813CC00BDB3FD /* EventModel.swift in Sources */,
 				E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */,
 			);
