@@ -32,7 +32,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         loginField.layer.cornerRadius = 20
         loginField.layer.borderWidth = 0.5
         loginField.layer.borderColor = UIColor.gray.cgColor
