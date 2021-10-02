@@ -42,7 +42,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e66-jQ-5dE">
-                                        <rect key="frame" x="40" y="434" width="334" height="44"/>
+                                        <rect key="frame" x="40" y="419" width="334" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="dHq-8W-8yI"/>
@@ -50,11 +50,11 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpF-Ul-mim" customClass="GradientButton" customModule="Evocatus" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="497" width="334" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpF-Ul-mim">
+                                        <rect key="frame" x="40" y="479" width="334" height="60"/>
+                                        <color key="backgroundColor" name="main"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="y0t-Ft-g5V"/>
+                                            <constraint firstAttribute="height" constant="60" id="y0t-Ft-g5V"/>
                                         </constraints>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,9 +68,9 @@
                                 <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1zq-5s-ufU" secondAttribute="trailing" id="53w-Nd-Yah"/>
-                                    <constraint firstItem="e66-jQ-5dE" firstAttribute="top" secondItem="QPu-vN-QZG" secondAttribute="bottom" constant="19" id="7s7-yu-bCu"/>
+                                    <constraint firstItem="e66-jQ-5dE" firstAttribute="top" secondItem="QPu-vN-QZG" secondAttribute="bottom" constant="4" id="7s7-yu-bCu"/>
                                     <constraint firstItem="q0U-Do-ipW" firstAttribute="centerX" secondItem="Hd3-QG-aMH" secondAttribute="centerX" id="9Us-3H-TEz"/>
-                                    <constraint firstItem="xpF-Ul-mim" firstAttribute="top" secondItem="e66-jQ-5dE" secondAttribute="bottom" constant="19" id="BxY-PY-3Sg"/>
+                                    <constraint firstItem="xpF-Ul-mim" firstAttribute="top" secondItem="e66-jQ-5dE" secondAttribute="bottom" constant="16" id="BxY-PY-3Sg"/>
                                     <constraint firstAttribute="trailing" secondItem="q0U-Do-ipW" secondAttribute="trailing" constant="54" id="C9n-7S-b0l"/>
                                     <constraint firstItem="1zq-5s-ufU" firstAttribute="leading" secondItem="Hd3-QG-aMH" secondAttribute="leading" id="LLw-Tz-zzA"/>
                                     <constraint firstAttribute="trailing" secondItem="xpF-Ul-mim" secondAttribute="trailing" constant="40" id="QuJ-sK-DVd"/>
@@ -135,6 +135,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Профиль" id="6cN-Xh-kso">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="bell" catalog="system" width="5" id="3Es-QJ-R7h">
+                            <color key="tintColor" name="main"/>
                             <connections>
                                 <segue destination="6qN-XY-1CQ" kind="show" id="ZsU-aH-iTy"/>
                             </connections>
@@ -183,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="3013.04347826087" y="788.83928571428567"/>
         </scene>
-        <!--Встречи-->
+        <!--Митиндр!-->
         <scene sceneID="335-s7-rPY">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Kin-rL-26V" customClass="MeetViewController" customModule="Evocatus" customModuleProvider="target" sceneMemberID="viewController">
@@ -205,7 +206,22 @@
                             <constraint firstItem="BFQ-VL-Iw2" firstAttribute="top" secondItem="KbO-B4-4hT" secondAttribute="top" id="sUO-xo-QRv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Встречи" id="z3m-Mx-PWx"/>
+                    <navigationItem key="navigationItem" title="Митиндр!" id="z3m-Mx-PWx">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="line.3.horizontal.decrease" catalog="system" id="3Sv-xd-SuO">
+                                <color key="tintColor" name="main"/>
+                                <connections>
+                                    <segue destination="Rtl-cb-ZO1" kind="show" id="k6S-LU-6VI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="QYG-Sf-sFP">
+                                <color key="tintColor" name="main"/>
+                                <connections>
+                                    <segue destination="N31-jT-gxl" kind="show" id="yM1-2R-zr7"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="BFQ-VL-Iw2" id="7qu-tS-iI9"/>
                     </connections>
@@ -213,6 +229,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgg-Oa-VK1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3013.04347826087" y="96.428571428571431"/>
+        </scene>
+        <!--Новая встреча-->
+        <scene sceneID="7y6-dB-ngL">
+            <objects>
+                <viewController id="N31-jT-gxl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nQO-GP-M2r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eXo-rV-zvo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новая встреча" id="Mtg-eg-7du"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4X-Ss-z50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3898" y="124"/>
+        </scene>
+        <!--Фильтр событий-->
+        <scene sceneID="y6S-pH-7cF">
+            <objects>
+                <viewController id="Rtl-cb-ZO1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kWb-1a-0Wd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kTj-4x-MwB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Фильтр событий" id="9mj-0y-eQS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wa6-7f-qMo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4548" y="-37"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="5gH-We-sq1">
@@ -271,6 +319,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xC0-xz-Msf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="background"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="text1"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -325,19 +377,21 @@
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="goforward.plus" catalog="system" width="121" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
         <image name="logo-new" width="259" height="264"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="background">
-            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="main">
             <color red="0.3843137254901961" green="0.44313725490196076" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="text1">
+            <color red="0.047058823529411764" green="0.066666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
