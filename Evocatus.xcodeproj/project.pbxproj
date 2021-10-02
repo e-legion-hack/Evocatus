@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		11320D6D2708138A00BDB3FD /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		11320D6F270813CC00BDB3FD /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
-		E007A8BF2707C3EB0028BAEB /* ELegion-Hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELegion-Hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E007A8BF2707C3EB0028BAEB /* Evocatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evocatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E007A8C22707C3EB0028BAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E007A8C62707C3EB0028BAEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		E007A8B62707C3EB0028BAEB = {
 			isa = PBXGroup;
 			children = (
-				E007A8C12707C3EB0028BAEB /* ELegion-Hack */,
+				E007A8C12707C3EB0028BAEB /* Evocatus */,
 				E007A8C02707C3EB0028BAEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,12 +61,12 @@
 		E007A8C02707C3EB0028BAEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E007A8BF2707C3EB0028BAEB /* ELegion-Hack.app */,
+				E007A8BF2707C3EB0028BAEB /* Evocatus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E007A8C12707C3EB0028BAEB /* ELegion-Hack */ = {
+		E007A8C12707C3EB0028BAEB /* Evocatus */ = {
 			isa = PBXGroup;
 			children = (
 				11320D6C2708135B00BDB3FD /* Models */,
@@ -78,15 +78,15 @@
 				E007A8CD2707C3EC0028BAEB /* LaunchScreen.storyboard */,
 				E007A8D02707C3EC0028BAEB /* Info.plist */,
 			);
-			path = "ELegion-Hack";
+			path = Evocatus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E007A8BE2707C3EB0028BAEB /* ELegion-Hack */ = {
+		E007A8BE2707C3EB0028BAEB /* Evocatus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E007A8D32707C3EC0028BAEB /* Build configuration list for PBXNativeTarget "ELegion-Hack" */;
+			buildConfigurationList = E007A8D32707C3EC0028BAEB /* Build configuration list for PBXNativeTarget "Evocatus" */;
 			buildPhases = (
 				E007A8BB2707C3EB0028BAEB /* Sources */,
 				E007A8BC2707C3EB0028BAEB /* Frameworks */,
@@ -96,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = "ELegion-Hack";
+			name = Evocatus;
 			productName = "ELegion-Hack";
-			productReference = E007A8BF2707C3EB0028BAEB /* ELegion-Hack.app */;
+			productReference = E007A8BF2707C3EB0028BAEB /* Evocatus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E007A8BA2707C3EB0028BAEB /* Build configuration list for PBXProject "ELegion-Hack" */;
+			buildConfigurationList = E007A8BA2707C3EB0028BAEB /* Build configuration list for PBXProject "Evocatus" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E007A8BE2707C3EB0028BAEB /* ELegion-Hack */,
+				E007A8BE2707C3EB0028BAEB /* Evocatus */,
 			);
 		};
 /* End PBXProject section */
@@ -304,13 +304,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F656GFRCPK;
-				INFOPLIST_FILE = "ELegion-Hack/Info.plist";
+				INFOPLIST_FILE = Evocatus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.KonstantinTishchenko.ELegion-Hack";
+				PRODUCT_BUNDLE_IDENTIFIER = com.KonstantinTishchenko.Evocatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -324,13 +324,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F656GFRCPK;
-				INFOPLIST_FILE = "ELegion-Hack/Info.plist";
+				INFOPLIST_FILE = Evocatus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.KonstantinTishchenko.ELegion-Hack";
+				PRODUCT_BUNDLE_IDENTIFIER = com.KonstantinTishchenko.Evocatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -340,7 +340,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E007A8BA2707C3EB0028BAEB /* Build configuration list for PBXProject "ELegion-Hack" */ = {
+		E007A8BA2707C3EB0028BAEB /* Build configuration list for PBXProject "Evocatus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E007A8D12707C3EC0028BAEB /* Debug */,
@@ -349,7 +349,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E007A8D32707C3EC0028BAEB /* Build configuration list for PBXNativeTarget "ELegion-Hack" */ = {
+		E007A8D32707C3EC0028BAEB /* Build configuration list for PBXNativeTarget "Evocatus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E007A8D42707C3EC0028BAEB /* Debug */,
