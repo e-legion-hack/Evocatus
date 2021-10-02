@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -124,12 +124,25 @@
         <!--Профиль-->
         <scene sceneID="mwE-Ev-umk">
             <objects>
-                <viewController title="Профиль" modalPresentationStyle="fullScreen" id="B7M-fj-crA" sceneMemberID="viewController">
+                <viewController title="Профиль" modalPresentationStyle="fullScreen" id="B7M-fj-crA" customClass="ProfileViewController" customModule="Evocatus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cmh-rz-Krh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="HNo-J6-Rqq">
+                                <rect key="frame" x="0.0" y="159" width="414" height="683"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="683" id="URA-nx-Fud"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="73e-po-YNv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HNo-J6-Rqq" firstAttribute="leading" secondItem="73e-po-YNv" secondAttribute="leading" id="DKK-A2-VSn"/>
+                            <constraint firstAttribute="bottom" secondItem="HNo-J6-Rqq" secondAttribute="bottom" id="mAA-42-m4C"/>
+                            <constraint firstItem="73e-po-YNv" firstAttribute="trailing" secondItem="HNo-J6-Rqq" secondAttribute="trailing" id="shS-Tm-Ojb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Профиль" id="6cN-Xh-kso">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="bell" catalog="system" id="3Es-QJ-R7h">
@@ -206,7 +219,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="b1W-8d-8jr">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b1W-8d-8jr" id="Tr6-zn-U02">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -304,6 +317,7 @@
     </scenes>
     <resources>
         <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="frame" width="375" height="683"/>
         <image name="home" width="44" height="44"/>
         <image name="logo-new" width="259" height="264"/>
         <image name="meet" width="41" height="41"/>
@@ -312,7 +326,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

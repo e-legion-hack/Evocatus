@@ -11,6 +11,7 @@
 		11320D70270813CC00BDB3FD /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11320D6F270813CC00BDB3FD /* EventModel.swift */; };
 		11341ABC2708236C00ABB58F /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ABB2708236C00ABB58F /* GradientButton.swift */; };
 		11341AC027082FF900ABB58F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ABF27082FF900ABB58F /* TabBarController.swift */; };
+		E00533CF27086AA50023F98E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00533CE27086AA50023F98E /* ProfileViewController.swift */; };
 		E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C22707C3EB0028BAEB /* AppDelegate.swift */; };
 		E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */; };
 		E007A8C72707C3EB0028BAEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C62707C3EB0028BAEB /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 		11320D6F270813CC00BDB3FD /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		11341ABB2708236C00ABB58F /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		11341ABF27082FF900ABB58F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E00533CE27086AA50023F98E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E007A8BF2707C3EB0028BAEB /* Evocatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evocatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E007A8C22707C3EB0028BAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,11 +145,12 @@
 				11341ABA2708234D00ABB58F /* Custom */,
 				11320D6C2708135B00BDB3FD /* Models */,
 				E007A8C22707C3EB0028BAEB /* AppDelegate.swift */,
-				E012C6CE270856B400705445 /* Cell */,
 				E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */,
-				E012C6DA2708582E00705445 /* NotificationViewController.swift */,
+				E012C6CE270856B400705445 /* Cell */,
 				E012C6D12708571A00705445 /* Extensions */,
+				E012C6DA2708582E00705445 /* NotificationViewController.swift */,
 				E007A8C62707C3EB0028BAEB /* LoginViewController.swift */,
+				E00533CE27086AA50023F98E /* ProfileViewController.swift */,
 				E007A8C82707C3EB0028BAEB /* Main.storyboard */,
 				E007A8CB2707C3EC0028BAEB /* Assets.xcassets */,
 				E007A8CD2707C3EC0028BAEB /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */,
 				11341AC027082FF900ABB58F /* TabBarController.swift in Sources */,
 				11320D70270813CC00BDB3FD /* EventModel.swift in Sources */,
+				E00533CF27086AA50023F98E /* ProfileViewController.swift in Sources */,
 				E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */,
 				E012C6D52708573800705445 /* UIFont.swift in Sources */,
 			);
