@@ -12,4 +12,5 @@ struct EventModel {
     var type: String
     var logo: String
     var location: String
+    var isMyEvent: Bool
 }

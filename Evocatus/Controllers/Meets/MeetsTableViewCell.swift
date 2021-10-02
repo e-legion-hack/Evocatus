@@ -13,6 +13,8 @@ class MeetsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var typeOfMeetLogoOutlet: UIImageView!
     @IBOutlet weak var employeeNameLabelOutlet: UILabel!
+    @IBOutlet weak var locationLabelOutlet: UILabel!
+    @IBOutlet weak var actionImageOutlet: UIImageView!
     
     @IBOutlet weak var backGroundCellViewOutlet: UIView!
     override func layoutSubviews() {
@@ -21,10 +23,12 @@ class MeetsTableViewCell: UITableViewCell {
         
     }
     
-    func configure(placeName: String, placeLogo: String) {
+    func configure(placeName: String, placeLogo: String, location: String, isMy: Bool) {
         //imageChannelsCell.image = UIImage(named: imageName ?? "logo-default")
         employeeNameLabelOutlet.text = placeName
         typeOfMeetLogoOutlet.image = UIImage(named: placeLogo)
+        actionImageOutlet.image = isMy == true ? UIImage(named: "close") : UIImage(named: "check")
+        locationLabelOutlet.text = location
     }
     
     func configureCellStaticApperance() {

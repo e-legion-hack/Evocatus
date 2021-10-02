@@ -27,17 +27,15 @@
                                     <constraint firstAttribute="height" constant="60" id="aAa-1p-c4a"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Бар &quot;Небар&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5J-7u-9w8">
-                                <rect key="frame" x="108" y="38" width="101" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бар &quot;Небар&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5J-7u-9w8">
+                                <rect key="frame" x="104" y="40" width="375" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" name="text2"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Птб 04:10 19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti3-Q5-nZO">
-                                <rect key="frame" x="108" y="60" width="125" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пт, 04.10 19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti3-Q5-nZO">
+                                <rect key="frame" x="104" y="62" width="423" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" name="text2"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,13 +55,6 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="ySC-3N-zxY"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Туса в баре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26C-wS-ygl">
-                                <rect key="frame" x="84" y="14" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" name="text1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="b7Y-uQ-VND">
                                 <rect key="frame" x="483" y="32" width="32" height="32"/>
                                 <constraints>
@@ -71,6 +62,13 @@
                                     <constraint firstAttribute="height" constant="32" id="p1U-cW-gWd"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Туса в баре каком-то незнаю каком" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26C-wS-ygl">
+                                <rect key="frame" x="84" y="14" width="305" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="text1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -78,11 +76,17 @@
                             <constraint firstAttribute="trailing" secondItem="b7Y-uQ-VND" secondAttribute="trailing" constant="16" id="MaD-J3-K9z"/>
                             <constraint firstItem="NAJ-Sz-ebs" firstAttribute="leading" secondItem="ScL-k5-vLY" secondAttribute="trailing" constant="16" id="YlT-Fb-11E"/>
                             <constraint firstItem="b7Y-uQ-VND" firstAttribute="centerY" secondItem="ScL-k5-vLY" secondAttribute="centerY" id="bHe-pE-djo"/>
+                            <constraint firstItem="Ti3-Q5-nZO" firstAttribute="leading" secondItem="kJa-T8-OFs" secondAttribute="trailing" constant="4" id="byv-rR-KFh"/>
                             <constraint firstItem="ScL-k5-vLY" firstAttribute="centerY" secondItem="tsM-QA-cIr" secondAttribute="centerY" id="c56-MU-Shn"/>
+                            <constraint firstItem="V5J-7u-9w8" firstAttribute="leading" secondItem="NAJ-Sz-ebs" secondAttribute="trailing" constant="4" id="dSh-dj-vl9"/>
+                            <constraint firstItem="V5J-7u-9w8" firstAttribute="centerY" secondItem="NAJ-Sz-ebs" secondAttribute="centerY" id="fKm-Rp-EEW"/>
                             <constraint firstItem="NAJ-Sz-ebs" firstAttribute="centerY" secondItem="ScL-k5-vLY" secondAttribute="centerY" id="g5u-hF-qPL"/>
+                            <constraint firstAttribute="trailing" secondItem="Ti3-Q5-nZO" secondAttribute="trailing" constant="4" id="i1a-35-s38"/>
                             <constraint firstItem="kJa-T8-OFs" firstAttribute="bottom" secondItem="ScL-k5-vLY" secondAttribute="bottom" id="jPj-jY-aTf"/>
                             <constraint firstItem="kJa-T8-OFs" firstAttribute="leading" secondItem="ScL-k5-vLY" secondAttribute="trailing" constant="16" id="rhB-39-H0l"/>
+                            <constraint firstItem="Ti3-Q5-nZO" firstAttribute="centerY" secondItem="kJa-T8-OFs" secondAttribute="centerY" id="uaJ-KO-cnW"/>
                             <constraint firstItem="ScL-k5-vLY" firstAttribute="leading" secondItem="tsM-QA-cIr" secondAttribute="leading" constant="8" id="uym-Fm-YXF"/>
+                            <constraint firstItem="b7Y-uQ-VND" firstAttribute="leading" secondItem="V5J-7u-9w8" secondAttribute="trailing" constant="4" id="yot-Kj-NqG"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -94,8 +98,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="actionImageOutlet" destination="b7Y-uQ-VND" id="aBI-oS-k40"/>
                 <outlet property="backGroundCellViewOutlet" destination="tsM-QA-cIr" id="Lyb-mG-Fbz"/>
                 <outlet property="employeeNameLabelOutlet" destination="26C-wS-ygl" id="rT2-HR-wwJ"/>
+                <outlet property="locationLabelOutlet" destination="V5J-7u-9w8" id="jxC-jN-xKE"/>
                 <outlet property="typeOfMeetLogoOutlet" destination="ScL-k5-vLY" id="u0n-wG-5HW"/>
             </connections>
             <point key="canvasLocation" x="-822.46376811594212" y="-268.86160714285711"/>

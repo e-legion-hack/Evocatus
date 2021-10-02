@@ -80,7 +80,7 @@ class MeetViewController: UIViewController {
 
 extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        1
     }
     
     
@@ -92,7 +92,7 @@ extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: MeetsTableViewCell.identifier, for: indexPath) as! MeetsTableViewCell
-        cell.configure(placeName: Storage.allMeets[indexPath.row].name, placeLogo: Storage.allMeets[indexPath.row].logo)
+        cell.configure(placeName: Storage.allMeets[indexPath.row].name, placeLogo: Storage.allMeets[indexPath.row].logo, location: Storage.allMeets[indexPath.row].location, isMy: Storage.allMeets[indexPath.row].isMyEvent)
         return cell
     }
 }
