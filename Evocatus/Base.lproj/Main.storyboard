@@ -141,7 +141,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Uos-Bg-yfr">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="41q-eB-Bqf" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="41q-eB-Bqf" customClass="TabBarController" customModule="Evocatus" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="7w3-tk-dx9"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vXh-yD-iXk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
