@@ -79,6 +79,12 @@ class MeetViewController: UIViewController {
 
 
 extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Storage.allMeets.count
         //array.count

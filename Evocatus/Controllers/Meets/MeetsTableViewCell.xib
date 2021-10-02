@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,37 +18,62 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsM-QA-cIr">
-                        <rect key="frame" x="8" y="4" width="531" height="110"/>
+                        <rect key="frame" x="8" y="4" width="531" height="96"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ScL-k5-vLY">
-                                <rect key="frame" x="17" y="27" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ScL-k5-vLY">
+                                <rect key="frame" x="8" y="18" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="0Rs-jR-mXy"/>
+                                    <constraint firstAttribute="height" constant="60" id="aAa-1p-c4a"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Туса в баре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26C-wS-ygl">
-                                <rect key="frame" x="94" y="27" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Бар &quot;Небар&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5J-7u-9w8">
-                                <rect key="frame" x="94" y="48" width="101" height="21"/>
+                                <rect key="frame" x="108" y="38" width="101" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="text2"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Птб 04:10 19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti3-Q5-nZO">
-                                <rect key="frame" x="93" y="66" width="125" height="21"/>
+                                <rect key="frame" x="108" y="60" width="125" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="text2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="local" translatesAutoresizingMaskIntoConstraints="NO" id="NAJ-Sz-ebs">
+                                <rect key="frame" x="84" y="40" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="D6c-Oi-SIk"/>
+                                    <constraint firstAttribute="width" constant="16" id="dJa-Of-iB8"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="kJa-T8-OFs">
+                                <rect key="frame" x="84" y="62" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="WOR-Rn-MK9"/>
+                                    <constraint firstAttribute="height" constant="16" id="Xfp-aQ-ULX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="kmT-aY-RaW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="ySC-3N-zxY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Туса в баре" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26C-wS-ygl">
+                                <rect key="frame" x="84" y="14" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="text1"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="110" id="Asf-Zr-waH"/>
+                            <constraint firstAttribute="height" constant="96" id="Asf-Zr-waH"/>
+                            <constraint firstItem="NAJ-Sz-ebs" firstAttribute="leading" secondItem="ScL-k5-vLY" secondAttribute="trailing" constant="16" id="YlT-Fb-11E"/>
+                            <constraint firstItem="ScL-k5-vLY" firstAttribute="centerY" secondItem="tsM-QA-cIr" secondAttribute="centerY" id="c56-MU-Shn"/>
+                            <constraint firstItem="NAJ-Sz-ebs" firstAttribute="centerY" secondItem="ScL-k5-vLY" secondAttribute="centerY" id="g5u-hF-qPL"/>
+                            <constraint firstItem="kJa-T8-OFs" firstAttribute="bottom" secondItem="ScL-k5-vLY" secondAttribute="bottom" id="jPj-jY-aTf"/>
+                            <constraint firstItem="kJa-T8-OFs" firstAttribute="leading" secondItem="ScL-k5-vLY" secondAttribute="trailing" constant="16" id="rhB-39-H0l"/>
+                            <constraint firstItem="ScL-k5-vLY" firstAttribute="leading" secondItem="tsM-QA-cIr" secondAttribute="leading" constant="8" id="uym-Fm-YXF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -68,5 +94,13 @@
     </objects>
     <resources>
         <image name="bar" width="1203" height="800"/>
+        <image name="clock" width="16" height="16"/>
+        <image name="local" width="16" height="16"/>
+        <namedColor name="text1">
+            <color red="0.047058823529411764" green="0.066666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="text2">
+            <color red="0.38823529411764707" green="0.40392156862745099" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

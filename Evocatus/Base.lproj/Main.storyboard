@@ -154,6 +154,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="main"/>
                     </tabBar>
                     <connections>
                         <segue destination="ydi-Tt-1P2" kind="relationship" relationship="viewControllers" id="v67-Pr-bNE"/>
@@ -242,11 +243,11 @@
             </objects>
             <point key="canvasLocation" x="3013" y="-1329"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Главная-->
         <scene sceneID="gXv-yu-IRw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ydi-Tt-1P2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="home" id="sG5-0V-lU7"/>
+                    <tabBarItem key="tabBarItem" title="Главная" image="house" catalog="system" selectedImage="house" id="sG5-0V-lU7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="gIZ-ll-u3O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
@@ -261,11 +262,11 @@
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="-593.30357142857144"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Встречи-->
         <scene sceneID="x9K-yo-dqW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KPl-H2-j9C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="meet" selectedImage="meet" id="ad9-eZ-mI1"/>
+                    <tabBarItem key="tabBarItem" title="Встречи" image="flame" catalog="system" selectedImage="flame" id="ad9-eZ-mI1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xC0-xz-Msf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
@@ -280,11 +281,11 @@
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="96.428571428571431"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Задачи-->
         <scene sceneID="j7d-eM-Gsb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8VC-MR-UPB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="tasks" selectedImage="tasks" id="St1-jK-RZD"/>
+                    <tabBarItem key="tabBarItem" title="Задачи" image="note.text" catalog="system" selectedImage="note.text" id="St1-jK-RZD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="q7V-NW-quy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
@@ -299,11 +300,11 @@
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="788.83928571428567"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Еще-->
         <scene sceneID="Fcw-tE-4qr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ND-Em-CpV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="meet" selectedImage="meet" id="u9v-PS-Rg3"/>
+                    <tabBarItem key="tabBarItem" title="Еще" image="goforward.plus" catalog="system" selectedImage="goforward.plus" id="u9v-PS-Rg3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BB4-oa-cgM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
@@ -321,12 +322,16 @@
     </scenes>
     <resources>
         <image name="bell" catalog="system" width="128" height="124"/>
-        <image name="home" width="44" height="44"/>
+        <image name="flame" catalog="system" width="108" height="128"/>
+        <image name="goforward.plus" catalog="system" width="121" height="128"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="logo-new" width="259" height="264"/>
-        <image name="meet" width="41" height="41"/>
-        <image name="tasks" width="43" height="43"/>
+        <image name="note.text" catalog="system" width="128" height="106"/>
         <namedColor name="background">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="main">
+            <color red="0.3843137254901961" green="0.44313725490196076" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

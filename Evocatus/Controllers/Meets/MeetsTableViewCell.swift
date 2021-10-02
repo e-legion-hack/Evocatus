@@ -30,7 +30,7 @@ class MeetsTableViewCell: UITableViewCell {
     func configureCellStaticApperance() {
         self.backgroundColor = .clear
         selectedBackgroundView?.backgroundColor = .gray
-        typeOfMeetLogoOutlet.layer.cornerRadius = 4
-        backGroundCellViewOutlet.layer.cornerRadius = 30
+        typeOfMeetLogoOutlet.layer.cornerRadius = 10
+        backGroundCellViewOutlet.layer.cornerRadius = 10
     }
 }

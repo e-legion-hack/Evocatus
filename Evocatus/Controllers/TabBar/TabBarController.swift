@@ -11,6 +11,6 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selectedIndex = 0
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = .clear
     }
 }

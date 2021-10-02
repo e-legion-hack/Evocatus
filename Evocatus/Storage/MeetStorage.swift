@@ -13,10 +13,10 @@ class MeetsStorage {
     
     init() {
         
-        allMeets = [EventModel(name: "Name event", type: "Type event", logo: "bar1", location: "Moscow"),
-                    EventModel(name: "Name event", type: "Type event", logo: "bar2", location: "Moscow"),
-                    EventModel(name: "Name event", type: "Type event", logo: "bar3", location: "Moscow"),
-                    EventModel(name: "Name event", type: "Type event", logo: "bar1", location: "Moscow"),
+        allMeets = [EventModel(name: "Пивопятница", type: "Type event", logo: "bar1", location: "Moscow"),
+                    EventModel(name: "Го по кофе", type: "Type event", logo: "bar2", location: "Moscow"),
+                    EventModel(name: "Хочу пиццу", type: "Type event", logo: "bar3", location: "Moscow"),
+                    EventModel(name: "KFC рулит", type: "Type event", logo: "bar1", location: "Moscow"),
                     
         ]
     }
