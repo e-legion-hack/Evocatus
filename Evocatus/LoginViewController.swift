@@ -14,11 +14,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var scrollBottomConstraint: NSLayoutConstraint!
     
+    var adminLogin = ""
+    var adminPassword = ""
+    
     @IBAction func loginButtonAction(_ sender: UIButton) {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if loginField.text == "admin" && passwordField.text == "admin" {
+        if loginField.text == adminLogin && passwordField.text == adminPassword {
             return true
         } else {
             showAlert(title: "Неверный логин или пароль", message: "Проверьте правильность введенных данных.")
@@ -39,7 +42,7 @@ class LoginViewController: UIViewController {
         passwordField.layer.borderColor = UIColor.gray.cgColor
         passwordField.clipsToBounds = true
         
-        loginButtonOutlet.layer.cornerRadius = 20
+        loginButtonOutlet.layer.cornerRadius = 44
         
         
         NotificationCenter.default.addObserver(
