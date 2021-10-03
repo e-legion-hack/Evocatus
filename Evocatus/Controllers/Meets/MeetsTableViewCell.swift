@@ -195,7 +195,9 @@ class MeetsTableViewCell: UITableViewCell {
     ) {
         self.buttonHandler = buttonHandler
         titleLabel.text = event.name
-        logoImageView.kf.setImage(with: URL(string: event.photoURL)!)
+        if let url = event.photoURL {
+            logoImageView.kf.setImage(with: URL(string: url)!)
+        }
         actionButton.setImage(UIImage(named: isChecked ? "icon_check" : "icon_close"), for: .normal)
         labelLocation.configure(
             image: UIImage(named: "local")!,
@@ -207,27 +209,5 @@ class MeetsTableViewCell: UITableViewCell {
             ? event.dttm.iso8601Date.hhmmString
             : event.dttm.iso8601Date.fullDateString
         )
-    }
-}
-
-extension String {
-    var iso8601Date: Date {
-        let iso8601DateFormatter = ISO8601DateFormatter()
-        iso8601DateFormatter.formatOptions = [.withInternetDateTime]
-        return iso8601DateFormatter.date(from: self)!
-    }
-}
-
-extension Date {
-    var fullDateString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, dd.MM  hh:mm"
-        return dateFormatter.string(from: self)
-    }
-
-    var hhmmString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm"
-        return dateFormatter.string(from: self)
     }
 }

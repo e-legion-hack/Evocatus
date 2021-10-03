@@ -36,7 +36,10 @@ class FIlterItemsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(items: [FilterItemViewItem]) {
+    private var preselection: FilterItemViewItem?
+
+    func configure(items: [FilterItemViewItem], preselection: FilterItemViewItem?) {
+        self.preselection = preselection
         self.items = items
         collectionView.reloadData()
     }
@@ -62,6 +65,10 @@ extension FIlterItemsView: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterItemCollectionCell.identifier, for: indexPath) as! FilterItemCollectionCell
         cell.configure(filterItem: items[indexPath.row])
+        if let preselection = preselection, items[indexPath.row].title == preselection.title {
+            cell.isSelected = true
+            self.preselection = nil
+        }
         return cell
     }
 

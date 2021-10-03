@@ -33,6 +33,14 @@ class FiltersViewController: UIViewController {
         return stackView
     }()
 
+    private lazy var datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.preferredDatePickerStyle = .inline
+        picker.datePickerMode = .date
+        picker.isHidden = true
+        return picker
+    }()
+
     private var selectedFilterItem: FilterItem.Kind?
     private var selectedDateItem: DateSelectorItem.Kind?
     private let saveHandler: (FilterItem.Kind?, DateSelectorItem.Kind?) -> Void
@@ -43,13 +51,16 @@ class FiltersViewController: UIViewController {
 
     private lazy var categoryItemsView: FIlterItemsView = {
         let fIlterItemsView = FIlterItemsView()
-        fIlterItemsView.configure(items: [
-            FilterItem(kind: .lunch),
-            FilterItem(kind: .sport),
-            FilterItem(kind: .party),
-            FilterItem(kind: .boardGames),
-            FilterItem(kind: .nature)
-        ])
+        fIlterItemsView.configure(
+            items: [
+                FilterItem(kind: .lunch),
+                FilterItem(kind: .sport),
+                FilterItem(kind: .party),
+                FilterItem(kind: .board_games),
+                FilterItem(kind: .nature)
+            ],
+            preselection: preselectedFilterItem.flatMap(FilterItem.init(kind:))
+        )
         fIlterItemsView.selectItemHandler = { [weak self] item in
             if let filterItem = item as? FilterItem {
                 self?.selectedFilterItem = filterItem.kind
@@ -60,11 +71,14 @@ class FiltersViewController: UIViewController {
 
     private lazy var dataItemsView: FIlterItemsView = {
         let dataItemsView = FIlterItemsView()
-        dataItemsView.configure(items: [
-            DateSelectorItem(kind: .today),
-            DateSelectorItem(kind: .tomorrow),
-            DateSelectorItem(kind: .thisWeek)
-        ])
+        dataItemsView.configure(
+            items: [
+                DateSelectorItem(kind: .today),
+                DateSelectorItem(kind: .tomorrow),
+                DateSelectorItem(kind: .thisWeek)
+            ],
+            preselection: preselectedDateItem.flatMap(DateSelectorItem.init(kind:))
+        )
         dataItemsView.selectItemHandler = { [weak self] item in
             if let dateSelectorItem = item as? DateSelectorItem {
                 self?.selectedDateItem = dateSelectorItem.kind
@@ -81,7 +95,16 @@ class FiltersViewController: UIViewController {
         return calendarButton
     }()
 
-    init(saveHandler: @escaping (FilterItem.Kind?, DateSelectorItem.Kind?) -> Void) {
+    let preselectedFilterItem: FilterItem.Kind?
+    let preselectedDateItem: DateSelectorItem.Kind?
+
+    init(
+        preselectedFilterItem: FilterItem.Kind?,
+        preselectedDateItem: DateSelectorItem.Kind?,
+        saveHandler: @escaping (FilterItem.Kind?, DateSelectorItem.Kind?) -> Void
+    ) {
+        self.preselectedFilterItem = preselectedFilterItem
+        self.preselectedDateItem = preselectedDateItem
         self.saveHandler = saveHandler
         super.init(nibName: nil, bundle: nil)
     }
@@ -132,7 +155,7 @@ class FiltersViewController: UIViewController {
         stackView.addArrangedSubview(createSectionLabel(title: "Дата"))
         stackView.addArrangedSubview(dataItemsView)
         stackView.addArrangedSubview(calendarButton)
-
+        stackView.addArrangedSubview(datePicker)
         view.addSubview(saveButton)
     }
 
@@ -154,7 +177,7 @@ class FiltersViewController: UIViewController {
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(titleBackgroundView.snp.bottom)
             make.leading.bottom.trailing.equalToSuperview()
-            make.width.equalTo(view)
+            make.bottom.equalTo(saveButton.snp.top).inset(-16)
         }
 
         stackView.snp.makeConstraints { make in
@@ -186,5 +209,7 @@ class FiltersViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @objc private func calendarButtonButtonDidPress() { }
+    @objc private func calendarButtonButtonDidPress() {
+        datePicker.isHidden.toggle()
+    }
 }

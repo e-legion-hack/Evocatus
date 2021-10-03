@@ -112,16 +112,29 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="J3b-m2-CSh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iqo-nk-Wo3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11.2" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-Z4-YYd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zpP-M6-mWN"/>
                         <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="qk9-Z4-YYd" firstAttribute="leading" secondItem="zpP-M6-mWN" secondAttribute="leading" id="RWd-GT-HsX"/>
+                            <constraint firstItem="qk9-Z4-YYd" firstAttribute="top" secondItem="zpP-M6-mWN" secondAttribute="top" id="TFi-cV-dXL"/>
+                            <constraint firstItem="zpP-M6-mWN" firstAttribute="trailing" secondItem="qk9-Z4-YYd" secondAttribute="trailing" id="cGV-XX-ciu"/>
+                            <constraint firstItem="zpP-M6-mWN" firstAttribute="bottom" secondItem="qk9-Z4-YYd" secondAttribute="bottom" id="gGv-NC-etY"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Еще" image="goforward.plus" catalog="system" selectedImage="goforward.plus" id="G3L-Ie-6wu"/>
                     <navigationItem key="navigationItem" title="Коллеги" id="dj4-2i-7jv"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrR-H8-Kd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3013.04347826087" y="1457.8125"/>
+            <point key="canvasLocation" x="2103" y="1456"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="mwE-Ev-umk">
@@ -200,8 +213,9 @@
                     <connections>
                         <segue destination="ydi-Tt-1P2" kind="relationship" relationship="viewControllers" id="v67-Pr-bNE"/>
                         <segue destination="KPl-H2-j9C" kind="relationship" relationship="viewControllers" id="OBW-8e-xsi"/>
-                        <segue destination="8VC-MR-UPB" kind="relationship" relationship="viewControllers" id="DUY-yU-bcH"/>
-                        <segue destination="7ND-Em-CpV" kind="relationship" relationship="viewControllers" id="Ct6-eq-eZs"/>
+                        <segue destination="azW-hE-ov4" kind="relationship" relationship="viewControllers" id="wqB-tN-7mF"/>
+                        <segue destination="J3b-m2-CSh" kind="relationship" relationship="viewControllers" id="BWV-e9-JbS"/>
+                        <segue destination="0E2-Ei-6Rb" kind="relationship" relationship="viewControllers" id="2ep-zW-het"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwG-55-i5V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -213,18 +227,32 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="0E2-Ei-6Rb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2Z-ed-yth">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11.3" translatesAutoresizingMaskIntoConstraints="NO" id="CfY-3i-xDX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eli-Ff-4SP"/>
                         <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="CfY-3i-xDX" firstAttribute="leading" secondItem="eli-Ff-4SP" secondAttribute="leading" id="RWS-zT-yq8"/>
+                            <constraint firstItem="eli-Ff-4SP" firstAttribute="trailing" secondItem="CfY-3i-xDX" secondAttribute="trailing" id="TWI-ba-byz"/>
+                            <constraint firstItem="CfY-3i-xDX" firstAttribute="top" secondItem="eli-Ff-4SP" secondAttribute="top" id="prU-rL-TPi"/>
+                            <constraint firstItem="eli-Ff-4SP" firstAttribute="bottom" secondItem="CfY-3i-xDX" secondAttribute="bottom" id="uhg-lb-7MT"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Задачи" image="note.text" catalog="system" selectedImage="note.text" id="hiX-Yk-FVb"/>
                     <navigationItem key="navigationItem" title="Задачи" id="DqE-Sn-YA7"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0G-cN-6vQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarItem title="Задачи" image="note.text" catalog="system" selectedImage="note.text" id="5jv-KW-1oQ"/>
             </objects>
             <point key="canvasLocation" x="3013.04347826087" y="788.83928571428567"/>
         </scene>
-        <!--e-tinder-->
+        <!--E-tinder-->
         <scene sceneID="335-s7-rPY">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Kin-rL-26V" customClass="MeetViewController" customModule="Evocatus" customModuleProvider="target" sceneMemberID="viewController">
@@ -246,7 +274,7 @@
                             <constraint firstItem="BFQ-VL-Iw2" firstAttribute="top" secondItem="KbO-B4-4hT" secondAttribute="top" id="sUO-xo-QRv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="e-tinder" id="z3m-Mx-PWx">
+                    <navigationItem key="navigationItem" title="E-tinder" id="z3m-Mx-PWx">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="icon_filter" id="3Sv-xd-SuO">
                                 <connections>
@@ -349,11 +377,38 @@
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="-593.30357142857144"/>
         </scene>
-        <!--Встречи-->
+        <!--Календарь-->
+        <scene sceneID="KlM-2G-Wii">
+            <objects>
+                <viewController id="azW-hE-ov4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJD-Vn-hko">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11.1" translatesAutoresizingMaskIntoConstraints="NO" id="RQT-iD-wsO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JZH-c4-IF8"/>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="RQT-iD-wsO" firstAttribute="top" secondItem="JZH-c4-IF8" secondAttribute="top" id="5Bh-hl-qRq"/>
+                            <constraint firstItem="JZH-c4-IF8" firstAttribute="bottom" secondItem="RQT-iD-wsO" secondAttribute="bottom" id="7zj-Js-Xaw"/>
+                            <constraint firstItem="JZH-c4-IF8" firstAttribute="trailing" secondItem="RQT-iD-wsO" secondAttribute="trailing" id="8fP-Nk-8Tm"/>
+                            <constraint firstItem="RQT-iD-wsO" firstAttribute="leading" secondItem="JZH-c4-IF8" secondAttribute="leading" id="dZC-jc-oD2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Календарь" image="calendar" catalog="system" id="T2w-5T-485"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Yg-2O-c6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="-222"/>
+        </scene>
+        <!--Тиндер-->
         <scene sceneID="x9K-yo-dqW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KPl-H2-j9C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Встречи" image="flame" catalog="system" selectedImage="flame" id="ad9-eZ-mI1"/>
+                    <tabBarItem key="tabBarItem" title="Тиндер" image="flame" catalog="system" selectedImage="flame" id="ad9-eZ-mI1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xC0-xz-Msf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
@@ -372,47 +427,13 @@
             </objects>
             <point key="canvasLocation" x="2102.898550724638" y="96.428571428571431"/>
         </scene>
-        <!--Задачи-->
-        <scene sceneID="j7d-eM-Gsb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8VC-MR-UPB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Задачи" image="note.text" catalog="system" selectedImage="note.text" id="St1-jK-RZD"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="q7V-NW-quy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="0E2-Ei-6Rb" kind="relationship" relationship="rootViewController" id="vSC-Tl-XNn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GM0-3j-YhU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2102.898550724638" y="788.83928571428567"/>
-        </scene>
-        <!--Еще-->
-        <scene sceneID="Fcw-tE-4qr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ND-Em-CpV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Еще" image="goforward.plus" catalog="system" selectedImage="goforward.plus" id="u9v-PS-Rg3"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BB4-oa-cgM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="J3b-m2-CSh" kind="relationship" relationship="rootViewController" id="d9A-7G-Asu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P6T-9G-u3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2102.898550724638" y="1457.8125"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="11.1" width="375" height="812"/>
+        <image name="11.2" width="375" height="812"/>
+        <image name="11.3" width="375" height="812"/>
         <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="goforward.plus" catalog="system" width="121" height="128"/>
         <image name="groups" width="343" height="280"/>

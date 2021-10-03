@@ -1,13 +1,16 @@
 import UIKit
 
 class FilterItemView: UIView {
+    private var _isSelected: Bool = false
+
     var isSelected: Bool {
         set {
             backgroundColor = newValue ? UIColor(named: "purple") : .white
             titleLabel.textColor = newValue ? .white : .black
+            _isSelected = newValue
         }
         get {
-            false // change
+            _isSelected
         }
     }
 

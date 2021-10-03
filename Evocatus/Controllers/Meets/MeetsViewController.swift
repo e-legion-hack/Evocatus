@@ -40,19 +40,21 @@ class MeetViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            } else {
-                assertionFailure()
             }
         }
     }
 
     @IBAction func filtersButtonAction(_ sender: Any) {
-        let vc = FiltersViewController { [weak self] categoryFilter, dateFilter in
+        let vc = FiltersViewController(
+            preselectedFilterItem: categoryFilter,
+            preselectedDateItem: dateFilter,
+            saveHandler: { [weak self] categoryFilter, dateFilter in
             if let self = self {
                 self.categoryFilter = categoryFilter
                 self.dateFilter = dateFilter
+                self.tableView.reloadData()
             }
-        }
+        })
         present(vc, animated: true, completion: nil)
     }
 
@@ -66,7 +68,19 @@ class MeetViewController: UIViewController {
         if let categoryFilter = self.categoryFilter {
             isIncluded = categoryFilter == event.category
         }
-        // todo datefilter
+        if let dateFilter = self.dateFilter {
+            let calendar = Calendar.current
+            switch dateFilter {
+            case .today:
+                isIncluded = calendar.isDateInToday(event.dttm.iso8601Date)
+            case .tomorrow:
+                isIncluded = calendar.isDateInTomorrow(event.dttm.iso8601Date)
+            case .thisWeek:
+                let week = calendar.dateComponents([.weekOfMonth], from: Date()).weekOfMonth!
+                let eventWeek = calendar.dateComponents([.weekOfMonth], from: event.dttm.iso8601Date).weekOfMonth!
+                isIncluded = week == eventWeek
+            }
+        }
         return isIncluded
     }
 }
@@ -107,21 +121,40 @@ extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
         ) as! MeetsTableViewCell
 
         if indexPath.section == 0 {
+            let event = myEvents[indexPath.row]
             cell.configure(
-                event: myEvents[indexPath.row],
+                event: event,
                 isChecked: false,
                 buttonHandler: { [weak self] in
-                    self?.myEvents.remove(at: indexPath.row)
-                    self?.tableView.reloadData()
+                    APIService.deleteMyEvent(
+                        employee: String(APIService.authenticatedEmployeeId),
+                        activityId: String(event.id)
+                    ) { [weak self] error in
+                        if let error = error {
+                            print(error)
+//                            assertionFailure()
+                        } else {
+                            self?.refreshData()
+                        }
+                    }
                 }
             )
         } else if indexPath.section == 1 {
+            let event = events[indexPath.row]
             cell.configure(
-                event: events[indexPath.row],
+                event: event,
                 isChecked: true,
                 buttonHandler: { [weak self] in
-                    self?.events.remove(at: indexPath.row)
-                    self?.tableView.reloadData()
+                    APIService.likeEvent(
+                        employee: APIService.authenticatedEmployeeId,
+                        activityId: event.id) { [weak self] error in
+                            if let error = error {
+                                print(error)
+//                                assertionFailure()
+                            } else {
+                                self?.refreshData()
+                            }
+                        }
                 }
             )
         }

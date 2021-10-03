@@ -5,16 +5,24 @@ class ImagePickerCreateCollectionViewCell: UICollectionViewCell {
     // MARK:- Properties
     var isCellSelected: Bool = false {
         didSet {
-            updateCellState()
+//            imageViewBorderView.alpha = 0
         }
     }
     
     // MARK:- Views
+//    lazy var imageViewBorderView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = UIColor(named: "main")
+//        view.layer.cornerRadius = 15
+////        view.isHidden =
+//        return view
+//    }()
+    
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 15
-        imageView.layer.backgroundColor = UIColor(named: "purple")?.cgColor
+//        imageView.layer.backgroundColor = UIColor(named: "purple")?.cgColor
 //        imageView.layer.borderWidth = 3
         return imageView
     }()
@@ -34,19 +42,20 @@ class ImagePickerCreateCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK:- Views' setup
+//    private func setupBorderView() {
+//        contentView.addSubview(imageViewBorderView)
+//        imageViewBorderView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+//    }
+    
     private func setupImageView() {
         contentView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-    }
-    
-    // MARK:- Private
-    private func updateCellState() {
-        if isCellSelected {
-            imageView.layer.borderWidth = 3
-        } else {
-            imageView.layer.borderWidth = 0
+            make.leading.equalToSuperview().inset(3)
+            make.trailing.equalToSuperview().inset(3)
+            make.top.equalToSuperview().inset(3)
+            make.bottom.equalToSuperview().inset(3)
         }
     }
 }

@@ -1,6 +1,7 @@
 import UIKit
 import SnapKit
 
+@available(iOS 14.0, *)
 class NewEvents: UIViewController {
     // MARK:- Properties
     let images: [UIImage?] = [
@@ -9,6 +10,17 @@ class NewEvents: UIViewController {
         .init(named: "Image3"),
         .init(named: "Image4"),
     ]
+
+    let imageUrl: [String] = [
+        "https://unsplash.com/photos/P1djASp78Ss",
+        "https://unsplash.com/photos/crn276hbbYU",
+        "https://unsplash.com/photos/6VhPY27jdps",
+        "https://unsplash.com/photos/jUPOXXRNdcA",
+        "https://unsplash.com/photos/pHANr-CpbYM"
+    ]
+    
+    var selectedImage: UIImage? = nil
+    var selectedImageUrl: String? = nil
     
     let cellId = "NewEventsImagePicker"
     
@@ -44,23 +56,27 @@ class NewEvents: UIViewController {
         return stackView
     }()
     
-
     private lazy var scrollView: UIScrollView = {
         return .init()
     }()
 
+    private var selectedCategory: FilterItem.Kind?
+
     private lazy var categoryItemsView: FIlterItemsView = {
         let fIlterItemsView = FIlterItemsView()
-        fIlterItemsView.configure(items: [
-            FilterItem(kind: .lunch),
-            FilterItem(kind: .sport),
-            FilterItem(kind: .party),
-            FilterItem(kind: .boardGames),
-            FilterItem(kind: .nature)
-        ])
-        fIlterItemsView.selectItemHandler = { item in
+        fIlterItemsView.configure(
+            items: [
+                FilterItem(kind: .lunch),
+                FilterItem(kind: .sport),
+                FilterItem(kind: .party),
+                FilterItem(kind: .board_games),
+                FilterItem(kind: .nature)
+            ],
+            preselection: nil
+        )
+        fIlterItemsView.selectItemHandler = { [weak self] item in
             if let filterItem = item as? FilterItem {
-                print(filterItem.kind)
+                self?.selectedCategory = filterItem.kind
             }
         }
         return fIlterItemsView
@@ -76,6 +92,31 @@ class NewEvents: UIViewController {
         let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 44))
         textField.leftView = spacerView
         textField.leftViewMode = .always
+        textField.addTarget(self, action: #selector(eventValueChanged), for: .valueChanged)
+        return textField
+    }()
+
+    private var nameValue: String?
+    @objc private func eventValueChanged() {
+        nameValue = eventTextField.text
+    }
+
+    private var place: String?
+    @objc private func placeValueChanged() {
+        place = placeTextField.text
+    }
+
+    private lazy var placeTextField: UITextField = {
+        let textField = UITextField()
+        textField.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
+        textField.layer.borderWidth = 1.0
+        textField.layer.cornerRadius = 15
+        textField.font = .systemFont(ofSize: 15)
+        textField.backgroundColor = .white
+        let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 44))
+        textField.leftView = spacerView
+        textField.leftViewMode = .always
+        textField.addTarget(self, action: #selector(placeValueChanged), for: .valueChanged)
         return textField
     }()
     
@@ -97,8 +138,24 @@ class NewEvents: UIViewController {
 //        return stackView
 //    }()
     
-    lazy var dateContainerView: UIView = {
+    lazy private var dateContainerView: UIView = {
         return .init()
+    }()
+    
+    lazy private var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.contentHorizontalAlignment = .left
+        return datePicker
+    }()
+    
+    lazy private var timePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .time
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.contentHorizontalAlignment = .left
+        return datePicker
     }()
     
 //    lazy var dateButton: UIButton = {
@@ -149,6 +206,9 @@ class NewEvents: UIViewController {
         
         stackView.addArrangedSubview(createSectionLabel(title: "Наименование события"))
         stackView.addArrangedSubview(eventTextField)
+
+        stackView.addArrangedSubview(createSectionLabel(title: "Местоположение события"))
+        stackView.addArrangedSubview(placeTextField)
         
         stackView.addArrangedSubview(createSectionLabel(title: "Выберите картинку"))
         stackView.addArrangedSubview(imagesCollectionView)
@@ -200,6 +260,12 @@ class NewEvents: UIViewController {
             make.leading.equalToSuperview().inset(16)
             make.trailing.equalToSuperview().inset(16)
         }
+
+        placeTextField.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.leading.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
         
         imagesCollectionView.snp.makeConstraints { make in
             make.height.equalTo(62)
@@ -212,11 +278,6 @@ class NewEvents: UIViewController {
             make.leading.equalToSuperview().inset(14)
             make.trailing.equalToSuperview().inset(14)
         }
-        
-//        dateButton.snp.makeConstraints { make in
-//            make.height.equalTo(44)
-//            make.width.equalTo(168)
-//        }
     }
 
     private func createSectionLabel(title: String) -> UILabel {
@@ -231,29 +292,13 @@ class NewEvents: UIViewController {
         dateStackView.axis = .vertical
         dateStackView.distribution = .fillProportionally
         dateStackView.addArrangedSubview(createSectionLabel(title: "Дата события"))
-        
-        let dateButton = UIButton()
-        dateButton.layer.cornerRadius = 15
-        dateButton.layer.borderWidth = 1
-        dateButton.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
-        dateButton.backgroundColor = .white
-        dateButton.setTitleColor(.black, for: .normal)
-        dateButton.setTitle("22.05.2020", for: .normal)
-        dateStackView.addArrangedSubview(dateButton)
+        dateStackView.addArrangedSubview(datePicker)
      
         let timeStackView = UIStackView()
         timeStackView.axis = .vertical
         timeStackView.distribution = .fillProportionally
         timeStackView.addArrangedSubview(createSectionLabel(title: "Время события"))
-        
-        let timeButton = UIButton()
-        timeButton.layer.cornerRadius = 15
-        timeButton.layer.borderWidth = 1
-        timeButton.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
-        timeButton.backgroundColor = .white
-        timeButton.setTitleColor(.black, for: .normal)
-        timeButton.setTitle("15:00", for: .normal)
-        timeStackView.addArrangedSubview(timeButton)
+        timeStackView.addArrangedSubview(timePicker)
         
         dateContainerView.addSubview(dateStackView)
         dateStackView.snp.makeConstraints { make in
@@ -296,22 +341,30 @@ class NewEvents: UIViewController {
     }
     
     @objc private func savePressed() {
-        self.dismiss(animated: true)
-    }
-    
-    @objc private func timePressed() {
-        
-    }
-    
-    @objc private func datePressed() {
-        
+        APIService.createEvent(
+            employee: APIService.authenticatedEmployeeId,
+            name: nameValue ?? "Прекрасный вечер",
+            category: selectedCategory?.rawValue ?? FilterItem.Kind.lunch.rawValue,
+            imageUrl: selectedImageUrl ?? imageUrl.first!,
+            place: place ?? "Moscow",
+            dateIso: Date().addingTimeInterval(24 * 60 * 60).isoString
+        ) { [weak self] error in
+            if let _ = error {
+//                assertionFailure()
+                return
+            }
+            DispatchQueue.main.async {
+                self?.dismiss(animated: true)
+            }
+        }
     }
 }
 
+@available(iOS 14.0, *)
 extension NewEvents: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImagePickerCreateCollectionViewCell
-        cell.isCellSelected.toggle()
+        selectedImage = images[indexPath.row]
+        selectedImageUrl = imageUrl[indexPath.row]
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -326,8 +379,6 @@ extension NewEvents: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print(indexPath.row)
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImagePickerCreateCollectionViewCell
         if let image = images[indexPath.row] {
             cell.imageView.image = image

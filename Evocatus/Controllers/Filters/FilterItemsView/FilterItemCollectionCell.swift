@@ -8,7 +8,7 @@ class FilterItemCollectionCell: UICollectionViewCell {
             filterItemView.isSelected = newValue
         }
         get {
-            false
+            filterItemView.isSelected
         }
     }
 

@@ -38,7 +38,7 @@ struct FilterItem: FilterItemViewItem {
         case sport
         case lunch
         case party
-        case boardGames
+        case board_games
         case nature
 
         var image: UIImage? {
@@ -49,7 +49,7 @@ struct FilterItem: FilterItemViewItem {
                 return UIImage(named: "filter_breakfast")
             case .party:
                 return UIImage(named: "filter_party")
-            case .boardGames:
+            case .board_games:
                 return UIImage(named: "filter_boardgames")
             case .nature:
                 return UIImage(named: "filter_nature")
@@ -64,7 +64,7 @@ struct FilterItem: FilterItemViewItem {
                 return "Обед"
             case .party:
                 return "Туса"
-            case .boardGames:
+            case .board_games:
                 return "Настолки"
             case .nature:
                 return "Природа"
