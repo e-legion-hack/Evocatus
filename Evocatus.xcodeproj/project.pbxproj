@@ -111,10 +111,7 @@
 			children = (
 				ED45CFBF27092E50000E5278 /* NewEvents */,
 				EDBC450D2709066700D66D82 /* Filters */,
-				11341AC42708308D00ABB58F /* Tasks */,
-				11341AC32708306900ABB58F /* Profile */,
 				11341AC22708304B00ABB58F /* Meets */,
-				11341AC12708304200ABB58F /* Employees */,
 				11341ABE27082FE000ABB58F /* TabBar */,
 			);
 			path = Controllers;
@@ -128,13 +125,6 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		11341AC12708304200ABB58F /* Employees */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Employees;
-			sourceTree = "<group>";
-		};
 		11341AC22708304B00ABB58F /* Meets */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,20 +133,6 @@
 				11341AC92708612300ABB58F /* MeetsTableViewCell.swift */,
 			);
 			path = Meets;
-			sourceTree = "<group>";
-		};
-		11341AC32708306900ABB58F /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		11341AC42708308D00ABB58F /* Tasks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tasks;
 			sourceTree = "<group>";
 		};
 		11341ACD270868F600ABB58F /* Storage */ = {

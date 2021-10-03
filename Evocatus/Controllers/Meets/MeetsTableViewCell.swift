@@ -175,7 +175,7 @@ class MeetsTableViewCell: UITableViewCell {
             make.leading.equalTo(logoImageView.snp.trailing).inset(-16)
             make.top.equalToSuperview().inset(12)
             make.bottom.equalToSuperview().inset(12)
-            make.trailing.equalTo(iconImageView.snp.leading).inset(0)
+            make.trailing.equalTo(iconImageView.snp.leading).inset(-6)
         }
         VStack.arrangedSubviews.forEach { view in
             view.snp.makeConstraints { make in
@@ -190,16 +190,43 @@ class MeetsTableViewCell: UITableViewCell {
     }
     
     func configure(
-        placeName: String,
-        placeLogoUrl: String,
-        location: String,
-        time: String,
+        event: Event,
         isChecked: Bool
     ) {
-        titleLabel.text = placeName
-        logoImageView.kf.setImage(with: URL(string: placeLogoUrl)!)
+        titleLabel.text = event.name
+        logoImageView.kf.setImage(with: URL(string: event.photoURL)!)
         iconImageView.image = UIImage(named: isChecked ? "icon_check" : "icon_close")
-        labelLocation.configure(image: UIImage(named: "local")!, title: location)
-        labelTime.configure(image: UIImage(named: "clock")!, title: time)
+        labelLocation.configure(
+            image: UIImage(named: "local")!,
+            title: event.place
+        )
+        labelTime.configure(
+            image: UIImage(named: "clock")!,
+            title: isChecked
+            ? event.dttm.iso8601Date.hhmmString
+            : event.dttm.iso8601Date.fullDateString
+        )
+    }
+}
+
+extension String {
+    var iso8601Date: Date {
+        let iso8601DateFormatter = ISO8601DateFormatter()
+        iso8601DateFormatter.formatOptions = [.withInternetDateTime]
+        return iso8601DateFormatter.date(from: self)!
+    }
+}
+
+extension Date {
+    var fullDateString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, dd.MM  hh:mm"
+        return dateFormatter.string(from: self)
+    }
+
+    var hhmmString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm"
+        return dateFormatter.string(from: self)
     }
 }

@@ -118,12 +118,9 @@ class MeetViewController: UIViewController {
     }
 }
 
-
-
 extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        2
-    }
+
+    func numberOfSections(in tableView: UITableView) -> Int { 2 }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
@@ -137,9 +134,9 @@ extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return MeetsStorage.myMeets.count
+            return myEvents.count
         } else if section == 1 {
-            return MeetsStorage.allMeets.count
+            return events.count
         } else {
             return 0
         }
@@ -156,18 +153,12 @@ extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
 
         if indexPath.section == 0 {
             cell.configure(
-                placeName: MeetsStorage.myMeets[indexPath.row].name,
-                placeLogoUrl:  MeetsStorage.myMeets[indexPath.row].logo,
-                location: "Бар «Небар»",
-                time: "Пт, 04.10 19:00",
+                event: myEvents[indexPath.row],
                 isChecked: false
             )
         } else if indexPath.section == 1 {
             cell.configure(
-                placeName: MeetsStorage.allMeets[indexPath.row].name,
-                placeLogoUrl:  MeetsStorage.allMeets[indexPath.row].logo,
-                location: "Столовка",
-                time: "12:00",
+                event: events[indexPath.row],
                 isChecked: true
             )
         }
