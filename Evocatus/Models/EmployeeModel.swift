@@ -19,5 +19,6 @@ struct EmployeeModel {
     var position: String
     var department: String
     var location: String
-    var favPlaces: [EventModel]
+    var favPlaces: [Event
+    ]
 }

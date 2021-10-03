@@ -1,18 +1,3 @@
-import Foundation
-
-// MARK: - TopLevel
-struct TopLevel: Codable {
-    let success: Bool
-    let message: Message
-}
-
-// MARK: - Message
-struct Message: Codable {
-    let employee: [Event]
-    let other: [Event]
-}
-
-// MARK: - Employee
 struct Event: Codable {
     let id, creator: Int
     let name, category, photoURL, place: String

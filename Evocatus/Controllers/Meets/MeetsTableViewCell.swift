@@ -9,15 +9,6 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-extension UIView {
-    @discardableResult func addSubviews(_ subviews: UIView...) -> Self {
-        subviews.forEach { view in
-            self.addSubview(view)
-        }
-        return self
-    }
-}
-
 extension MeetsTableViewCell {
 
     final class LabelWithImage: UIView {

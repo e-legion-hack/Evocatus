@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		11320D6E2708138A00BDB3FD /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11320D6D2708138A00BDB3FD /* EmployeeModel.swift */; };
-		11320D70270813CC00BDB3FD /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11320D6F270813CC00BDB3FD /* EventModel.swift */; };
 		11341ABC2708236C00ABB58F /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ABB2708236C00ABB58F /* GradientButton.swift */; };
 		11341AC027082FF900ABB58F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ABF27082FF900ABB58F /* TabBarController.swift */; };
 		11341AC627085F9300ABB58F /* MeetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341AC527085F9300ABB58F /* MeetsViewController.swift */; };
 		11341ACA2708612300ABB58F /* MeetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341AC92708612300ABB58F /* MeetsTableViewCell.swift */; };
-		11341ACC270868E500ABB58F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ACB270868E500ABB58F /* Storage.swift */; };
-		11341ACF2708693B00ABB58F /* MeetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341ACE2708693B00ABB58F /* MeetStorage.swift */; };
+		7E57C286270939700091A291 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E57C285270939700091A291 /* APIService.swift */; };
+		7E57C28827093AD40091A291 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E57C28727093AD30091A291 /* UIView.swift */; };
 		7ED38C6F2709201A00C5FD6F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED38C6E2709201A00C5FD6F /* UIColor.swift */; };
-		7ED38C712709224E00C5FD6F /* EventModelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED38C702709224E00C5FD6F /* EventModelNew.swift */; };
+		7ED38C712709224E00C5FD6F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED38C702709224E00C5FD6F /* Event.swift */; };
 		7ED38C7427092A1F00C5FD6F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7ED38C7327092A1F00C5FD6F /* Kingfisher */; };
 		E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C22707C3EB0028BAEB /* AppDelegate.swift */; };
 		E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */; };
@@ -43,15 +42,14 @@
 
 /* Begin PBXFileReference section */
 		11320D6D2708138A00BDB3FD /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
-		11320D6F270813CC00BDB3FD /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		11341ABB2708236C00ABB58F /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		11341ABF27082FF900ABB58F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		11341AC527085F9300ABB58F /* MeetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetsViewController.swift; sourceTree = "<group>"; };
 		11341AC92708612300ABB58F /* MeetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetsTableViewCell.swift; sourceTree = "<group>"; };
-		11341ACB270868E500ABB58F /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		11341ACE2708693B00ABB58F /* MeetStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetStorage.swift; sourceTree = "<group>"; };
+		7E57C285270939700091A291 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		7E57C28727093AD30091A291 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		7ED38C6E2709201A00C5FD6F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		7ED38C702709224E00C5FD6F /* EventModelNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModelNew.swift; sourceTree = "<group>"; };
+		7ED38C702709224E00C5FD6F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E007A8BF2707C3EB0028BAEB /* Evocatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evocatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E007A8C22707C3EB0028BAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,8 +90,8 @@
 		11320D6C2708135B00BDB3FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7ED38C702709224E00C5FD6F /* Event.swift */,
 				11320D6D2708138A00BDB3FD /* EmployeeModel.swift */,
-				11320D6F270813CC00BDB3FD /* EventModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,19 +127,17 @@
 			isa = PBXGroup;
 			children = (
 				11341AC527085F9300ABB58F /* MeetsViewController.swift */,
-				7ED38C702709224E00C5FD6F /* EventModelNew.swift */,
 				11341AC92708612300ABB58F /* MeetsTableViewCell.swift */,
 			);
 			path = Meets;
 			sourceTree = "<group>";
 		};
-		11341ACD270868F600ABB58F /* Storage */ = {
+		7E57C284270939620091A291 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				11341ACB270868E500ABB58F /* Storage.swift */,
-				11341ACE2708693B00ABB58F /* MeetStorage.swift */,
+				7E57C285270939700091A291 /* APIService.swift */,
 			);
-			path = Storage;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E007A8B62707C3EB0028BAEB = {
@@ -163,8 +159,8 @@
 		E007A8C12707C3EB0028BAEB /* Evocatus */ = {
 			isa = PBXGroup;
 			children = (
-				11341ACD270868F600ABB58F /* Storage */,
 				11341ABD27082FD200ABB58F /* Controllers */,
+				7E57C284270939620091A291 /* Service */,
 				11341ABA2708234D00ABB58F /* Custom */,
 				11320D6C2708135B00BDB3FD /* Models */,
 				E012C6D12708571A00705445 /* Extensions */,
@@ -202,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				E012C6D42708573800705445 /* UIFont.swift */,
+				7E57C28727093AD30091A291 /* UIView.swift */,
 				7ED38C6E2709201A00C5FD6F /* UIColor.swift */,
 				E012C6D62708575F00705445 /* UILabel.swift */,
 			);
@@ -347,7 +344,7 @@
 				E012C6D0270856DF00705445 /* HeaderTableViewCell.swift in Sources */,
 				E012C6DB2708582E00705445 /* NotificationViewController.swift in Sources */,
 				E048F1402708B8EC00A437E5 /* ProfileTableViewCell.swift in Sources */,
-				7ED38C712709224E00C5FD6F /* EventModelNew.swift in Sources */,
+				7ED38C712709224E00C5FD6F /* Event.swift in Sources */,
 				EDBC45162709105300D66D82 /* FIlterItemsView.swift in Sources */,
 				E007A8C72707C3EB0028BAEB /* LoginViewController.swift in Sources */,
 				11341ACA2708612300ABB58F /* MeetsTableViewCell.swift in Sources */,
@@ -361,13 +358,12 @@
 				E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */,
 				EDBC4519270910A000D66D82 /* FilterItem.swift in Sources */,
 				11341AC027082FF900ABB58F /* TabBarController.swift in Sources */,
-				11320D70270813CC00BDB3FD /* EventModel.swift in Sources */,
 				EDBC451427090EC400D66D82 /* FilterItemView.swift in Sources */,
-				11341ACF2708693B00ABB58F /* MeetStorage.swift in Sources */,
+				7E57C28827093AD40091A291 /* UIView.swift in Sources */,
 				EDBC451B2709120C00D66D82 /* FilterItemCollectionCell.swift in Sources */,
 				E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */,
+				7E57C286270939700091A291 /* APIService.swift in Sources */,
 				E012C6D52708573800705445 /* UIFont.swift in Sources */,
-				11341ACC270868E500ABB58F /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

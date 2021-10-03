@@ -6,105 +6,41 @@
 //
 
 import UIKit
-import SnapKit
 
 class MeetViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
-    var array  = [String]()
-    let url = "https://jsonplaceholder.typicode.com/comments"
+
+    private var myEvents: [Event] = []
+    private var events: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.backgroundColor = UIColor(hex: "F5F5FA")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorColor = .clear
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(loadList),
-            name: NSNotification.Name(rawValue: "load"), object: nil
-        )
-
         tableView.register(MeetsTableViewCell.self, forCellReuseIdentifier: MeetsTableViewCell.identifier)
-
-        refreshData()
     }
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
-        tableView.reloadData()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        tableView.reloadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        tableView.reloadData()
-    }
-    
-    @objc private func reloadPlacesList(notification: NSNotification) {
-        tableView.reloadData()
-        self.view.setNeedsDisplay()
-    }
-    
-    @objc func loadList(notification: NSNotification){
-        print("reloadList")
-        tableView.reloadData()
-        //tabBar.items![1].badgeValue = String(Storage.allUsers[Storage.userIdActiveSession].favGroups.count)
+        refreshData()
     }
 
     func refreshData() {
-        URLSession.init(
-            configuration: .default
-        ).dataTask(
-            with: URL(string: "https://api.legion-hack.ru/employee/7/e-tinder/")!
-        ) { data, responce, error in
-
-            if let error = error {
-                assertionFailure()
-                return
-            }
-
-            if let data = data,
-               let result = try? JSONDecoder().decode(TopLevel.self, from: data) {
-                self.myEvents = result.message.employee
-                self.events = result.message.other
+        APIService.requestEvents { [weak self] result in
+            guard let self = self else { return }
+            if case let .success(message) = result {
+                self.events = message.other
+                self.myEvents = message.employee
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
+            } else {
+                assertionFailure()
             }
-
-        }.resume()
-    }
-
-    private var myEvents: [Event] = []
-    private var events: [Event] = []
-    
-    
-    func getZapros(url: String) {
-//        AF.request(url).responseJSON {response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//                //print(json[0], json[1])
-//                self.array.append("\(json[0]["name"])")
-//                print(json["answer"])
-//            case .failure(let error):
-//                print(error)
-//            }
-//
-//        }
+        }
     }
 
     @IBAction func filtersButtonAction(_ sender: Any) {
