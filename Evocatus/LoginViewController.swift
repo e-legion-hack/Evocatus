@@ -32,17 +32,17 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginField.layer.cornerRadius = 20
-        loginField.layer.borderWidth = 0.5
-        loginField.layer.borderColor = UIColor.gray.cgColor
-        loginField.clipsToBounds = true
-        
-        passwordField.layer.cornerRadius = 20
-        passwordField.layer.borderWidth = 0.5
-        passwordField.layer.borderColor = UIColor.gray.cgColor
-        passwordField.clipsToBounds = true
-        
-        loginButtonOutlet.layer.cornerRadius = 44
+//        loginField.layer.cornerRadius = 20
+//        loginField.layer.borderWidth = 0.5
+//        loginField.layer.borderColor = UIColor(named: "main")?.cgColor
+//        loginField.clipsToBounds = true
+//
+//        passwordField.layer.cornerRadius = 20
+//        passwordField.layer.borderWidth = 0.5
+//        passwordField.layer.borderColor = UIColor(named: "main")?.cgColor
+//        passwordField.clipsToBounds = true
+//
+//        loginButtonOutlet.layer.cornerRadius = 10
         
         
         NotificationCenter.default.addObserver(
@@ -55,6 +55,23 @@ class LoginViewController: UIViewController {
             selector: #selector(keyboardWillBeHidden(notification:)),
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
+    }
+    
+    
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        loginField.layer.cornerRadius = 10
+        loginField.layer.borderWidth = 0.5
+        loginField.layer.borderColor = UIColor(named: "main")?.cgColor
+        loginField.clipsToBounds = true
+        
+        passwordField.layer.cornerRadius = 10
+        passwordField.layer.borderWidth = 0.5
+        passwordField.layer.borderColor = UIColor(named: "main")?.cgColor
+        passwordField.clipsToBounds = true
+        
+        loginButtonOutlet.layer.cornerRadius = 18
     }
     
     @objc func keyboardWasShown(notification: Notification) {

@@ -6,7 +6,3 @@
 //
 
 import Foundation
-
-class Storage {
-    static var allMeets = MeetsStorage.init().allMeets
-}

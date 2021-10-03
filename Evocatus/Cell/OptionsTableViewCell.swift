@@ -24,16 +24,6 @@ class OptionsTableViewCell: UITableViewCell {
         return label
     }()
     
-    let addImageContact: UIImageView = {
-        let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10
-        imageView.isHidden = true
-        imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "calendar")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -50,7 +40,10 @@ class OptionsTableViewCell: UITableViewCell {
     
     func cellConfigure(nameArray: [[String]], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
-        indexPath.section == 2 ? (addImageContact.isHidden = false) : (addImageContact.isHidden = true)
+        
+        if indexPath == [2, 0] {
+            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        }
     }
     
     //MARK: - SetOptionsConstraints
@@ -69,14 +62,6 @@ class OptionsTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameCellLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             nameCellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 15)
-        ])
-        
-        self.contentView.addSubview(addImageContact)
-        NSLayoutConstraint.activate([
-            addImageContact.topAnchor.constraint(equalTo: backgroundViewCell.topAnchor, constant: 0),
-            addImageContact.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 0),
-            addImageContact.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: 0),
-            addImageContact.bottomAnchor.constraint(equalTo: backgroundViewCell.bottomAnchor, constant: 0)
         ])
     }
 }
