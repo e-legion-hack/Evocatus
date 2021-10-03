@@ -2,6 +2,17 @@ import UIKit
 import SnapKit
 
 class NewEvents: UIViewController {
+    // MARK:- Properties
+    let images: [UIImage?] = [
+        .init(named: "Image1"),
+        .init(named: "Image2"),
+        .init(named: "Image3"),
+        .init(named: "Image4"),
+    ]
+    
+    let cellId = "NewEventsImagePicker"
+    
+    // MARK:- Views
     private lazy var titleBackgroundView: UIView = {
         let titleBackgroundView = UIView()
         return titleBackgroundView
@@ -68,6 +79,30 @@ class NewEvents: UIViewController {
         return textField
     }()
     
+    lazy var imagesCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: view.frame, collectionViewLayout: createImagesCollectionViewLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(ImagePickerCreateCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.backgroundColor = UIColor(named: "background")
+        return collectionView
+    }()
+    
+//    private lazy var horizontalDateStackView: UIStackView = {
+//        let stackView = UIStackView()
+//        stackView.axis = .horizontal
+//        stackView.spacing = 8
+//        return stackView
+//    }()
+//
+//    private lazy var dateButton: UIButton = {
+//        let button = UIButton()
+//        button.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
+//        button.layer.borderWidth = 1
+//        return button
+//    }()
+    
+    // MARK:- Lifecycle
     required init(){
         super.init(nibName: nil, bundle: nil)
     }
@@ -91,10 +126,7 @@ class NewEvents: UIViewController {
         }
     }
 
-    @objc private func savePressed() {
-        self.dismiss(animated: true)
-    }
-
+    // MARK:- Views' setup
     private func setupView() {
         view.backgroundColor = UIColor(named: "background")
         titleBackgroundView.backgroundColor = .white
@@ -109,7 +141,10 @@ class NewEvents: UIViewController {
         
         stackView.addArrangedSubview(createSectionLabel(title: "Наименование события"))
         stackView.addArrangedSubview(eventTextField)
-
+        
+        stackView.addArrangedSubview(createSectionLabel(title: "Выберите картинку"))
+        stackView.addArrangedSubview(imagesCollectionView)
+        
         view.addSubview(saveButton)
     }
 
@@ -152,6 +187,12 @@ class NewEvents: UIViewController {
             make.leading.equalToSuperview().inset(16)
             make.trailing.equalToSuperview().inset(16)
         }
+        
+        imagesCollectionView.snp.makeConstraints { make in
+            make.height.equalTo(62)
+            make.leading.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
     }
 
     private func createSectionLabel(title: String) -> UILabel {
@@ -160,8 +201,60 @@ class NewEvents: UIViewController {
         label.text = title
         return label
     }
+    
+    private func createImagesCollectionViewLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(62),
+            heightDimension: .absolute(62))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        group.interItemSpacing = .fixed(10)
+
+        let section = NSCollectionLayoutSection(group: group)
+        
+
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+    
+    // MARK:- Selectors
     @objc private func closeButtonDidPress() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func savePressed() {
+        self.dismiss(animated: true)
+    }
+}
+
+extension NewEvents: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImagePickerCreateCollectionViewCell
+        cell.isCellSelected.toggle()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImagePickerCreateCollectionViewCell
+        cell.isCellSelected = false
+    }
+}
+
+extension NewEvents: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print(indexPath.row)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImagePickerCreateCollectionViewCell
+        if let image = images[indexPath.row] {
+            cell.imageView.image = image
+        }
+        return cell
     }
 }

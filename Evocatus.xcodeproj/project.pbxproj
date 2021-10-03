@@ -18,6 +18,8 @@
 		7ED38C6F2709201A00C5FD6F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED38C6E2709201A00C5FD6F /* UIColor.swift */; };
 		7ED38C712709224E00C5FD6F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED38C702709224E00C5FD6F /* Event.swift */; };
 		7ED38C7427092A1F00C5FD6F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7ED38C7327092A1F00C5FD6F /* Kingfisher */; };
+		8861F7F6270960F8005A78EA /* ImagePickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861F7F5270960F8005A78EA /* ImagePickerCollectionView.swift */; };
+		8861F7F8270961D4005A78EA /* ImagePickerCreateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861F7F7270961D4005A78EA /* ImagePickerCreateCollectionViewCell.swift */; };
 		E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C22707C3EB0028BAEB /* AppDelegate.swift */; };
 		E007A8C52707C3EB0028BAEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */; };
 		E007A8C72707C3EB0028BAEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007A8C62707C3EB0028BAEB /* LoginViewController.swift */; };
@@ -52,6 +54,8 @@
 		7E57C289270943BF0091A291 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		7ED38C6E2709201A00C5FD6F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7ED38C702709224E00C5FD6F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8861F7F5270960F8005A78EA /* ImagePickerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCollectionView.swift; sourceTree = "<group>"; };
+		8861F7F7270961D4005A78EA /* ImagePickerCreateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCreateCollectionViewCell.swift; sourceTree = "<group>"; };
 		E007A8BF2707C3EB0028BAEB /* Evocatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evocatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E007A8C22707C3EB0028BAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E007A8C42707C3EB0028BAEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		8861F7F4270960EB005A78EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8861F7F5270960F8005A78EA /* ImagePickerCollectionView.swift */,
+				8861F7F7270961D4005A78EA /* ImagePickerCreateCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E007A8B62707C3EB0028BAEB = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +243,7 @@
 		ED45CFBF27092E50000E5278 /* NewEvents */ = {
 			isa = PBXGroup;
 			children = (
+				8861F7F4270960EB005A78EA /* View */,
 				ED45CFC127092EA6000E5278 /* NewEvents.swift */,
 			);
 			path = NewEvents;
@@ -353,6 +367,7 @@
 				11341ACA2708612300ABB58F /* MeetsTableViewCell.swift in Sources */,
 				11341AC627085F9300ABB58F /* MeetsViewController.swift in Sources */,
 				EDBC450F2709068600D66D82 /* FiltersViewController.swift in Sources */,
+				8861F7F6270960F8005A78EA /* ImagePickerCollectionView.swift in Sources */,
 				11341ABC2708236C00ABB58F /* GradientButton.swift in Sources */,
 				7ED38C6F2709201A00C5FD6F /* UIColor.swift in Sources */,
 				E048F13D2708B83200A437E5 /* ProfileViewController.swift in Sources */,
@@ -361,6 +376,7 @@
 				E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */,
 				EDBC4519270910A000D66D82 /* FilterItem.swift in Sources */,
 				7E57C28A270943BF0091A291 /* PrimaryButton.swift in Sources */,
+				8861F7F8270961D4005A78EA /* ImagePickerCreateCollectionViewCell.swift in Sources */,
 				11341AC027082FF900ABB58F /* TabBarController.swift in Sources */,
 				EDBC451427090EC400D66D82 /* FilterItemView.swift in Sources */,
 				7E57C28827093AD40091A291 /* UIView.swift in Sources */,
@@ -515,14 +531,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F656GFRCPK;
+				DEVELOPMENT_TEAM = 44ZWCLCJ2W;
 				INFOPLIST_FILE = Evocatus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.KonstantinTishchenko.Evocatus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrvalter566;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -535,14 +551,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F656GFRCPK;
+				DEVELOPMENT_TEAM = 44ZWCLCJ2W;
 				INFOPLIST_FILE = Evocatus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.KonstantinTishchenko.Evocatus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrvalter566;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
