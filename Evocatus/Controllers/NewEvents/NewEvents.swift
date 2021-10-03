@@ -85,20 +85,28 @@ class NewEvents: UIViewController {
         collectionView.dataSource = self
         collectionView.register(ImagePickerCreateCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.backgroundColor = UIColor(named: "background")
+        collectionView.isScrollEnabled = false
         return collectionView
     }()
     
-//    private lazy var horizontalDateStackView: UIStackView = {
+//    lazy var horizontalStackView: UIStackView = {
 //        let stackView = UIStackView()
 //        stackView.axis = .horizontal
-//        stackView.spacing = 8
+//        stackView.distribution = .fillEqually
+//        stackView.backgroundColor = .white
 //        return stackView
 //    }()
-//
-//    private lazy var dateButton: UIButton = {
+    
+    lazy var dateContainerView: UIView = {
+        return .init()
+    }()
+    
+//    lazy var dateButton: UIButton = {
 //        let button = UIButton()
-//        button.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
+//        button.layer.cornerRadius = 15
 //        button.layer.borderWidth = 1
+//        button.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
+//        button.backgroundColor = .red
 //        return button
 //    }()
     
@@ -144,6 +152,11 @@ class NewEvents: UIViewController {
         
         stackView.addArrangedSubview(createSectionLabel(title: "Выберите картинку"))
         stackView.addArrangedSubview(imagesCollectionView)
+        
+//        stackView.addArrangedSubview(horizontalStackView)
+        
+        stackView.addArrangedSubview(dateContainerView)
+        setupDateContainerView()
         
         view.addSubview(saveButton)
     }
@@ -193,6 +206,17 @@ class NewEvents: UIViewController {
             make.leading.equalToSuperview().inset(16)
             make.trailing.equalToSuperview().inset(16)
         }
+        
+        dateContainerView.snp.makeConstraints { make in
+            make.height.equalTo(72)
+            make.leading.equalToSuperview().inset(14)
+            make.trailing.equalToSuperview().inset(14)
+        }
+        
+//        dateButton.snp.makeConstraints { make in
+//            make.height.equalTo(44)
+//            make.width.equalTo(168)
+//        }
     }
 
     private func createSectionLabel(title: String) -> UILabel {
@@ -200,6 +224,52 @@ class NewEvents: UIViewController {
         label.textColor = UIColor(named: "text2")
         label.text = title
         return label
+    }
+    
+    private func setupDateContainerView() {
+        let dateStackView = UIStackView()
+        dateStackView.axis = .vertical
+        dateStackView.distribution = .fillProportionally
+        dateStackView.addArrangedSubview(createSectionLabel(title: "Дата события"))
+        
+        let dateButton = UIButton()
+        dateButton.layer.cornerRadius = 15
+        dateButton.layer.borderWidth = 1
+        dateButton.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
+        dateButton.backgroundColor = .white
+        dateButton.setTitleColor(.black, for: .normal)
+        dateButton.setTitle("22.05.2020", for: .normal)
+        dateStackView.addArrangedSubview(dateButton)
+     
+        let timeStackView = UIStackView()
+        timeStackView.axis = .vertical
+        timeStackView.distribution = .fillProportionally
+        timeStackView.addArrangedSubview(createSectionLabel(title: "Время события"))
+        
+        let timeButton = UIButton()
+        timeButton.layer.cornerRadius = 15
+        timeButton.layer.borderWidth = 1
+        timeButton.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
+        timeButton.backgroundColor = .white
+        timeButton.setTitleColor(.black, for: .normal)
+        timeButton.setTitle("15:00", for: .normal)
+        timeStackView.addArrangedSubview(timeButton)
+        
+        dateContainerView.addSubview(dateStackView)
+        dateStackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(158)
+        }
+        
+        dateContainerView.addSubview(timeStackView)
+        timeStackView.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(158)
+        }
     }
     
     private func createImagesCollectionViewLayout() -> UICollectionViewLayout {
@@ -216,7 +286,6 @@ class NewEvents: UIViewController {
 
         let section = NSCollectionLayoutSection(group: group)
         
-
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
@@ -228,6 +297,14 @@ class NewEvents: UIViewController {
     
     @objc private func savePressed() {
         self.dismiss(animated: true)
+    }
+    
+    @objc private func timePressed() {
+        
+    }
+    
+    @objc private func datePressed() {
+        
     }
 }
 
