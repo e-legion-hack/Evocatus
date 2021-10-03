@@ -14,6 +14,12 @@ class FiltersViewController: UIViewController {
         return closeButton
     }()
 
+    private lazy var saveButton: UIButton = {
+        let button = PrimaryButton.make()
+        button.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
+        return button
+    }()
+
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
@@ -27,6 +33,10 @@ class FiltersViewController: UIViewController {
         return stackView
     }()
 
+    private var selectedFilterItem: FilterItem.Kind?
+    private var selectedDateItem: DateSelectorItem.Kind?
+    private let saveHandler: (FilterItem.Kind?, DateSelectorItem.Kind?) -> Void
+
     private lazy var scrollView: UIScrollView = {
         return .init()
     }()
@@ -34,15 +44,16 @@ class FiltersViewController: UIViewController {
     private lazy var categoryItemsView: FIlterItemsView = {
         let fIlterItemsView = FIlterItemsView()
         fIlterItemsView.configure(items: [
-            .init(image: UIImage(named: "filter_item1"), title: "2"),
-            .init(image: UIImage(named: "filter_item2"), title: "3"),
-            .init(image: UIImage(named: "filter_item2"), title: "Спорт"),
-            .init(image: UIImage(named: "filter_item2"), title: "Спорт"),
-            .init(image: UIImage(named: "filter_item2"), title: "Спорт"),
-            .init(image: UIImage(named: "filter_item3"), title: "Туса")
+            FilterItem(kind: .lunch),
+            FilterItem(kind: .sport),
+            FilterItem(kind: .party),
+            FilterItem(kind: .boardGames),
+            FilterItem(kind: .nature)
         ])
-        fIlterItemsView.selectItemHandler = { item in
-            print(item.title)
+        fIlterItemsView.selectItemHandler = { [weak self] item in
+            if let filterItem = item as? FilterItem {
+                self?.selectedFilterItem = filterItem.kind
+            }
         }
         return fIlterItemsView
     }()
@@ -50,12 +61,14 @@ class FiltersViewController: UIViewController {
     private lazy var dataItemsView: FIlterItemsView = {
         let dataItemsView = FIlterItemsView()
         dataItemsView.configure(items: [
-            .init(title: "Сегодня"),
-            .init(title: "Завтра"),
-            .init(title: "Эта неделя")
+            DateSelectorItem(kind: .today),
+            DateSelectorItem(kind: .tomorrow),
+            DateSelectorItem(kind: .thisWeek)
         ])
-        dataItemsView.selectItemHandler = { item in
-            print(item.title)
+        dataItemsView.selectItemHandler = { [weak self] item in
+            if let dateSelectorItem = item as? DateSelectorItem {
+                self?.selectedDateItem = dateSelectorItem.kind
+            }
         }
         return dataItemsView
     }()
@@ -68,7 +81,8 @@ class FiltersViewController: UIViewController {
         return calendarButton
     }()
 
-    required init(){
+    init(saveHandler: @escaping (FilterItem.Kind?, DateSelectorItem.Kind?) -> Void) {
+        self.saveHandler = saveHandler
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -95,6 +109,11 @@ class FiltersViewController: UIViewController {
         }
     }
 
+    @objc private func savePressed() {
+        saveHandler(selectedFilterItem, selectedDateItem)
+        self.dismiss(animated: true)
+    }
+
     private func setupView() {
         view.backgroundColor = UIColor(named: "background")
         titleBackgroundView.backgroundColor = .white
@@ -113,6 +132,8 @@ class FiltersViewController: UIViewController {
         stackView.addArrangedSubview(createSectionLabel(title: "Дата"))
         stackView.addArrangedSubview(dataItemsView)
         stackView.addArrangedSubview(calendarButton)
+
+        view.addSubview(saveButton)
     }
 
     private func setupLayout() {
@@ -144,6 +165,13 @@ class FiltersViewController: UIViewController {
 
         calendarButton.snp.makeConstraints { make in
             make.height.equalTo(44)
+        }
+
+        saveButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(16)
+            make.leading.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(50)
         }
     }
 

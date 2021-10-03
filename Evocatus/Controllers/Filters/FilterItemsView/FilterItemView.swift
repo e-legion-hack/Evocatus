@@ -39,7 +39,7 @@ class FilterItemView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(filterItem: FilterItem) {
+    func configure(filterItem: FilterItemViewItem) {
         imageView.image = filterItem.image
         titleLabel.text = filterItem.title
         imageView.isHidden = filterItem.image == nil
@@ -66,7 +66,7 @@ class FilterItemView: UIView {
         }
     }
 
-    static func width(for item: FilterItem) -> CGFloat {
+    static func width(for item: FilterItemViewItem) -> CGFloat {
         var width: CGFloat = 0
         width += item.image == nil ? 0 : 24
         width += 14 + 14

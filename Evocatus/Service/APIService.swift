@@ -20,12 +20,12 @@ class APIService {
         }.resume()
     }
 
-    private struct TopLevel: Codable {
+    private struct TopLevel: Decodable {
         let success: Bool
         let message: Message
     }
 
-    struct Message: Codable {
+    struct Message: Decodable {
         let employee: [Event]
         let other: [Event]
     }

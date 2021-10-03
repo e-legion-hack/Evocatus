@@ -14,6 +14,12 @@ class NewEvents: UIViewController {
         return closeButton
     }()
 
+    private lazy var saveButton: UIButton = {
+        let button = PrimaryButton.make()
+        button.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
+        return button
+    }()
+
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
@@ -34,15 +40,16 @@ class NewEvents: UIViewController {
     private lazy var categoryItemsView: FIlterItemsView = {
         let fIlterItemsView = FIlterItemsView()
         fIlterItemsView.configure(items: [
-            .init(image: UIImage(named: "filter_item1"), title: "Обед"),
-            .init(image: UIImage(named: "filter_item2"), title: "3"),
-            .init(image: UIImage(named: "filter_item2"), title: "Спорт"),
-            .init(image: UIImage(named: "filter_item2"), title: "Спорт"),
-            .init(image: UIImage(named: "filter_item2"), title: "Спорт"),
-            .init(image: UIImage(named: "filter_item3"), title: "Туса")
+            FilterItem(kind: .lunch),
+            FilterItem(kind: .sport),
+            FilterItem(kind: .party),
+            FilterItem(kind: .boardGames),
+            FilterItem(kind: .nature)
         ])
         fIlterItemsView.selectItemHandler = { item in
-            print(item.title)
+            if let filterItem = item as? FilterItem {
+                print(filterItem.kind)
+            }
         }
         return fIlterItemsView
     }()
@@ -70,6 +77,10 @@ class NewEvents: UIViewController {
         }
     }
 
+    @objc private func savePressed() {
+        self.dismiss(animated: true)
+    }
+
     private func setupView() {
         view.backgroundColor = UIColor(named: "background")
         titleBackgroundView.backgroundColor = .white
@@ -81,6 +92,8 @@ class NewEvents: UIViewController {
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(createSectionLabel(title: "Выберите категорию"))
         stackView.addArrangedSubview(categoryItemsView)
+
+        view.addSubview(saveButton)
     }
 
     private func setupLayout() {
@@ -108,6 +121,13 @@ class NewEvents: UIViewController {
             make.top.equalToSuperview().inset(32)
             make.leading.trailing.bottom.equalToSuperview()
             make.leading.trailing.equalTo(view).inset(16)
+        }
+
+        saveButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(16)
+            make.leading.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(50)
         }
     }
 

@@ -24,7 +24,7 @@ class FilterItemCollectionCell: UICollectionViewCell {
         setupLayout()
     }
 
-    func configure(filterItem: FilterItem) {
+    func configure(filterItem: FilterItemViewItem) {
         filterItemView.configure(filterItem: filterItem)
     }
 
@@ -42,7 +42,7 @@ class FilterItemCollectionCell: UICollectionViewCell {
         }
     }
 
-    static func width(for item: FilterItem) -> CGFloat {
+    static func width(for item: FilterItemViewItem) -> CGFloat {
         return FilterItemView.width(for: item)
     }
 }

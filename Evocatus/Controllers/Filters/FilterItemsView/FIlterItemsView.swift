@@ -1,9 +1,9 @@
 import UIKit
 
 class FIlterItemsView: UIView {
-    var selectItemHandler: ((FilterItem) -> Void)?
+    var selectItemHandler: ((FilterItemViewItem) -> Void)?
 
-    private var items: [FilterItem] = []
+    private var items: [FilterItemViewItem] = []
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -36,7 +36,7 @@ class FIlterItemsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(items: [FilterItem]) {
+    func configure(items: [FilterItemViewItem]) {
         self.items = items
         collectionView.reloadData()
     }

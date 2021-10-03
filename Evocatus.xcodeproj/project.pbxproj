@@ -14,6 +14,7 @@
 		11341ACA2708612300ABB58F /* MeetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11341AC92708612300ABB58F /* MeetsTableViewCell.swift */; };
 		7E57C286270939700091A291 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E57C285270939700091A291 /* APIService.swift */; };
 		7E57C28827093AD40091A291 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E57C28727093AD30091A291 /* UIView.swift */; };
+		7E57C28A270943BF0091A291 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E57C289270943BF0091A291 /* PrimaryButton.swift */; };
 		7ED38C6F2709201A00C5FD6F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED38C6E2709201A00C5FD6F /* UIColor.swift */; };
 		7ED38C712709224E00C5FD6F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED38C702709224E00C5FD6F /* Event.swift */; };
 		7ED38C7427092A1F00C5FD6F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7ED38C7327092A1F00C5FD6F /* Kingfisher */; };
@@ -48,6 +49,7 @@
 		11341AC92708612300ABB58F /* MeetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetsTableViewCell.swift; sourceTree = "<group>"; };
 		7E57C285270939700091A291 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		7E57C28727093AD30091A291 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		7E57C289270943BF0091A291 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		7ED38C6E2709201A00C5FD6F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7ED38C702709224E00C5FD6F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E007A8BF2707C3EB0028BAEB /* Evocatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evocatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,12 +98,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		11341ABA2708234D00ABB58F /* Custom */ = {
+		11341ABA2708234D00ABB58F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				11341ABB2708236C00ABB58F /* GradientButton.swift */,
+				7E57C289270943BF0091A291 /* PrimaryButton.swift */,
 			);
-			path = Custom;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		11341ABD27082FD200ABB58F /* Controllers */ = {
@@ -161,7 +164,7 @@
 			children = (
 				11341ABD27082FD200ABB58F /* Controllers */,
 				7E57C284270939620091A291 /* Service */,
-				11341ABA2708234D00ABB58F /* Custom */,
+				11341ABA2708234D00ABB58F /* Views */,
 				11320D6C2708135B00BDB3FD /* Models */,
 				E012C6D12708571A00705445 /* Extensions */,
 				E012C6CE270856B400705445 /* Cell */,
@@ -357,6 +360,7 @@
 				11320D6E2708138A00BDB3FD /* EmployeeModel.swift in Sources */,
 				E007A8C32707C3EB0028BAEB /* AppDelegate.swift in Sources */,
 				EDBC4519270910A000D66D82 /* FilterItem.swift in Sources */,
+				7E57C28A270943BF0091A291 /* PrimaryButton.swift in Sources */,
 				11341AC027082FF900ABB58F /* TabBarController.swift in Sources */,
 				EDBC451427090EC400D66D82 /* FilterItemView.swift in Sources */,
 				7E57C28827093AD40091A291 /* UIView.swift in Sources */,

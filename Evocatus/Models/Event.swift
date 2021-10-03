@@ -1,6 +1,7 @@
-struct Event: Codable {
+struct Event: Decodable {
     let id, creator: Int
-    let name, category, photoURL, place: String
+    let category: FilterItem.Kind
+    let name, photoURL, place: String
     let dttm: String
 
     enum CodingKeys: String, CodingKey {

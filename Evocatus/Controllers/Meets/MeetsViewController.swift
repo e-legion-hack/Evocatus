@@ -12,6 +12,9 @@ class MeetViewController: UIViewController {
 
     private var myEvents: [Event] = []
     private var events: [Event] = []
+
+    private var categoryFilter: FilterItem.Kind?
+    private var dateFilter: DateSelectorItem.Kind?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +47,27 @@ class MeetViewController: UIViewController {
     }
 
     @IBAction func filtersButtonAction(_ sender: Any) {
-        let vc = FiltersViewController()
+        let vc = FiltersViewController { [weak self] categoryFilter, dateFilter in
+            if let self = self {
+                self.categoryFilter = categoryFilter
+                self.dateFilter = dateFilter
+            }
+        }
         present(vc, animated: true, completion: nil)
     }
 
     @IBAction func newEventsButtonAction(_ sender: Any) {
         let vc = NewEvents()
         present(vc, animated: true, completion: nil)
+    }
+
+    lazy var filter: (Event) -> Bool = { event in
+        var isIncluded = true
+        if let categoryFilter = self.categoryFilter {
+            isIncluded = categoryFilter == event.category
+        }
+        // todo datefilter
+        return isIncluded
     }
 }
 
@@ -72,7 +89,9 @@ extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return myEvents.count
         } else if section == 1 {
-            return events.count
+            return events
+                .filter(filter)
+                .count
         } else {
             return 0
         }
