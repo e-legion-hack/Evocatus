@@ -109,12 +109,20 @@ extension MeetViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             cell.configure(
                 event: myEvents[indexPath.row],
-                isChecked: false
+                isChecked: false,
+                buttonHandler: { [weak self] in
+                    self?.myEvents.remove(at: indexPath.row)
+                    self?.tableView.reloadData()
+                }
             )
         } else if indexPath.section == 1 {
             cell.configure(
                 event: events[indexPath.row],
-                isChecked: true
+                isChecked: true,
+                buttonHandler: { [weak self] in
+                    self?.events.remove(at: indexPath.row)
+                    self?.tableView.reloadData()
+                }
             )
         }
 

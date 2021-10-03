@@ -98,12 +98,14 @@ class MeetsTableViewCell: UITableViewCell {
         return label
     }()
 
-    private lazy var iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .clear
-        imageView.layer.cornerRadius = 6
-        return imageView
+    private lazy var actionButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 6
+        button.backgroundColor = .clear
+        button.tintColor = .clear
+        button.contentMode = .scaleAspectFill
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        return button
     }()
 
     private lazy var insetView: UIView = {
@@ -112,6 +114,8 @@ class MeetsTableViewCell: UITableViewCell {
         view.layer.cornerRadius = 10
         return view
     }()
+
+    private var buttonHandler: (() -> Void)?
 
     private lazy var labelLocation: LabelWithImage = {
         LabelWithImage()
@@ -136,7 +140,7 @@ class MeetsTableViewCell: UITableViewCell {
             insetView.addSubviews(
                 logoImageView,
                 VStack,
-                iconImageView
+                actionButton
             )
         )
         VStack.addArrangedSubview(titleLabel)
@@ -166,27 +170,33 @@ class MeetsTableViewCell: UITableViewCell {
             make.leading.equalTo(logoImageView.snp.trailing).inset(-16)
             make.top.equalToSuperview().inset(12)
             make.bottom.equalToSuperview().inset(12)
-            make.trailing.equalTo(iconImageView.snp.leading).inset(-6)
+            make.trailing.equalTo(actionButton.snp.leading).inset(-6)
         }
         VStack.arrangedSubviews.forEach { view in
             view.snp.makeConstraints { make in
                 make.width.equalTo(VStack.snp.width)
             }
         }
-        iconImageView.snp.makeConstraints { make in
+        actionButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(12)
             make.top.equalToSuperview().inset(12)
             make.size.equalTo(26)
         }
     }
+
+    @objc private func buttonPressed() {
+        buttonHandler?()
+    }
     
     func configure(
         event: Event,
-        isChecked: Bool
+        isChecked: Bool,
+        buttonHandler: @escaping () -> Void
     ) {
+        self.buttonHandler = buttonHandler
         titleLabel.text = event.name
         logoImageView.kf.setImage(with: URL(string: event.photoURL)!)
-        iconImageView.image = UIImage(named: isChecked ? "icon_check" : "icon_close")
+        actionButton.setImage(UIImage(named: isChecked ? "icon_check" : "icon_close"), for: .normal)
         labelLocation.configure(
             image: UIImage(named: "local")!,
             title: event.place
