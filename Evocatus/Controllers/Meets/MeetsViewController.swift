@@ -60,6 +60,9 @@ class MeetViewController: UIViewController {
 
     @IBAction func newEventsButtonAction(_ sender: Any) {
         let vc = NewEvents()
+        vc.callback = { [weak self] in
+            self?.refreshData()
+        }
         present(vc, animated: true, completion: nil)
     }
 

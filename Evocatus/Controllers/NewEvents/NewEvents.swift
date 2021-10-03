@@ -3,6 +3,8 @@ import SnapKit
 
 @available(iOS 14.0, *)
 class NewEvents: UIViewController {
+
+    var callback: (() -> Void)?
     // MARK:- Properties
     let images: [UIImage?] = [
         .init(named: "Image1"),
@@ -93,6 +95,7 @@ class NewEvents: UIViewController {
         textField.leftView = spacerView
         textField.leftViewMode = .always
         textField.addTarget(self, action: #selector(eventValueChanged), for: .valueChanged)
+        textField.delegate = self
         return textField
     }()
 
@@ -117,6 +120,7 @@ class NewEvents: UIViewController {
         textField.leftView = spacerView
         textField.leftViewMode = .always
         textField.addTarget(self, action: #selector(placeValueChanged), for: .valueChanged)
+        textField.delegate = self
         return textField
     }()
     
@@ -239,7 +243,7 @@ class NewEvents: UIViewController {
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(titleBackgroundView.snp.bottom)
             make.leading.bottom.trailing.equalToSuperview()
-            make.width.equalTo(view)
+            make.bottom.equalTo(saveButton.snp.top).inset(-16)
         }
 
         stackView.snp.makeConstraints { make in
@@ -355,6 +359,7 @@ class NewEvents: UIViewController {
             }
             DispatchQueue.main.async {
                 self?.dismiss(animated: true)
+                self?.callback?()
             }
         }
     }
@@ -384,5 +389,12 @@ extension NewEvents: UICollectionViewDataSource {
             cell.imageView.image = image
         }
         return cell
+    }
+}
+
+
+extension NewEvents: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }
