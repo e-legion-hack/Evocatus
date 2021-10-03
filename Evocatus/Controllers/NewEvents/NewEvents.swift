@@ -32,6 +32,7 @@ class NewEvents: UIViewController {
         stackView.spacing = 24
         return stackView
     }()
+    
 
     private lazy var scrollView: UIScrollView = {
         return .init()
@@ -54,6 +55,19 @@ class NewEvents: UIViewController {
         return fIlterItemsView
     }()
 
+    private lazy var eventTextField: UITextField = {
+        let textField = UITextField()
+        textField.layer.borderColor = UIColor(named: "main")?.withAlphaComponent(0.3).cgColor
+        textField.layer.borderWidth = 1.0
+        textField.layer.cornerRadius = 15
+        textField.font = .systemFont(ofSize: 15)
+        textField.backgroundColor = .white
+        let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 44))
+        textField.leftView = spacerView
+        textField.leftViewMode = .always
+        return textField
+    }()
+    
     required init(){
         super.init(nibName: nil, bundle: nil)
     }
@@ -92,6 +106,9 @@ class NewEvents: UIViewController {
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(createSectionLabel(title: "Выберите категорию"))
         stackView.addArrangedSubview(categoryItemsView)
+        
+        stackView.addArrangedSubview(createSectionLabel(title: "Наименование события"))
+        stackView.addArrangedSubview(eventTextField)
 
         view.addSubview(saveButton)
     }
@@ -128,6 +145,12 @@ class NewEvents: UIViewController {
             make.leading.equalToSuperview().inset(16)
             make.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
+        }
+        
+        eventTextField.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.leading.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(16)
         }
     }
 
